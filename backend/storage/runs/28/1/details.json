@@ -1,0 +1,73 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=coze_space",
+      "method": "POST",
+      "resource_type": "xhr",
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=13",
+          "date": "Wed, 29 Apr 2026 04:27:51 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e3553542a3e9f84a75d7c95802fdde0a1d3ab8b9f4af085dfbffcaf156c1603527a1b8cd283294a687015ff3d6e78a2e784e4b07ad59bb5f028017134d1dcc4e71c5fa3090dc64d179bb12ee5c0bcc3b87e",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777436871371898",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "vcache12.cn4092[63,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "7ae1d8a017774368713297836e",
+          "x-tt-trace-id": "00-260429122751965FFEBF6B8ADF634B99-20C3F79E8683A149-00",
+          "x-tt-logid": "20260429122751965FFEBF6B8ADF634B99",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://mssdk.bytedance.com/web/common?ms_appid=751148&msToken=IRjBob2D3kIVRGAF4rfhbOuf8uL69KPkJekCMKcKmByqyFmVPinulLTenrQMLhZA1uIzUE5Mh58VD1jvm7aEFl76AgXTtAuq6DoBrL2wDnBFCP7yDo2glI9ruEUAW1I7pMMVkb8I8TM66IxLVJEFMuGh-UcKnMi82W0%3D",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-ms-token": "VtOkBiI3PKzpiXliE7yGsC7ev3rWgrJ-cb-3JI9cwBBQBrIDXKUrTDgdD-Og_265FybYE82mOPPglHYpnITswnSDn46HO5g8Ts0bgleVcqXgRMJR00zvFmtaBk4cdjf5QoQ9NTH-q2GhIBGIfptDt_qepaE8Avg4P-3tH4wRphlr2AaBZtKphgaHNA==",
+          "access-control-expose-headers": "x-ms-token,x-ms-resp",
+          "access-control-allow-methods": "GET,POST,OPTIONS",
+          "server-timing": "inner; dur=33",
+          "date": "Wed, 29 Apr 2026 04:27:51 GMT",
+          "content-type": "text/plain; charset=utf-8",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e357eab5f55e6827aca097203f5b4010db30e18432f6b8a13a88388986390716712661ad37276c354e44d14affc62adc7090051fa1212637d3c2b1e51f1aa8a814b9fd4c18f698cc46ba662037bdcaac79b",
+          "access-control-allow-headers": "x-mssdk-info,x-ms-req",
+          "x-tt-timestamp": "1777436871.842",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777436871821581",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "access-control-allow-credentials": "true",
+          "via": "dynamic1.cn4589[81,0]",
+          "access-control-allow-origin": "https://www.coze.cn",
+          "x-tt-trace-id": "00-260429122751C166D95F442B6AA962E8-5EB0C43C44A9099D-00",
+          "content-length": "44",
+          "eagleid": "7ae1d7af17774368717761088e",
+          "x-tt-logid": "20260429122751C166D95F442B6AA962E8",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

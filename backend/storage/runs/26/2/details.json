@@ -1,0 +1,636 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/1315.e7373e2fba.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc03:6:443::152",
+          "x-ser": "i93840_c28996, i61976_c26719, i36360_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"eab71febc1daf6bb5a7d03d2e11b8b17\"",
+          "x-tos-request-id": "22c6f7f074171fd269f07417-a802324-fdbdgdc03g0g510gg45",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i36360_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/1315.e7373e2fba.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Tue, 28 Apr 2026 08:36:27 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Tue, 28 Apr 2026 08:47:19 GMT",
+          "x-tos-hash-crc64ecma": "4370062183225632684",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-260428165108198B61788791E2CF3CB6-5B194E8B50B9DA02-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "20260428165108198B61788791E2CF3CB6"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/1887.bfd4078853.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc02:19:597::41",
+          "x-ser": "i37126_c25893, i91150_c28779, i36398_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"3dabacac644f4ce4c2b8f45262c8e698\"",
+          "x-tos-request-id": "1d396ceb5e32edf869eb5e32-fdbdgdc03geg221gg56-a804794",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=2",
+          "x-cache": "HIT from i36398_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/1887.bfd4078853.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:42 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:34 GMT",
+          "x-tos-hash-crc64ecma": "3729839167934813818",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-26042716123389A4C9F9244133E05F6B-7C1CD434783B1ACF-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "2026042716123389A4C9F9244133E05F6B"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/css/async/7840.fc372af3eb.css",
+      "method": "GET",
+      "resource_type": "stylesheet",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc01:29:579::139",
+          "x-ser": "i93570_c28996, i90842_c28779, i36346_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"08abc495a7e6d4874f6e4169cc46ba39\"",
+          "x-tos-request-id": "3ee066ef09c0419a69ef09c0-fdbdgdc03geg541gg51-a815531",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i36346_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/css/async/7840.fc372af3eb.css",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Accept-Encoding",
+          "last-modified": "Mon, 27 Apr 2026 06:51:43 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Mon, 27 Apr 2026 07:01:20 GMT",
+          "x-tos-hash-crc64ecma": "1804880165280698784",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-2604271612330FF2601F49B0D3D1C6FF-17E4B27670F00BFF-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "202604271612330FF2601F49B0D3D1C6FF"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/7840.881fa9794b.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc03:13:c08::22",
+          "x-ser": "i35864_c25893, i91216_c28779, i36398_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"241563f47e903ab527737fb26ba6ad42\"",
+          "x-tos-request-id": "35b699eb5ee7ca7e69eb5ee7-fdbdgdc02g26g114gg23-fdbdgdc02g11gd38gg14",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=2",
+          "x-cache": "HIT from i36398_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/7840.881fa9794b.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:46 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:15:35 GMT",
+          "x-tos-hash-crc64ecma": "13150660596556877331",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-2604271613295B417AF6EA48C6238192-30F03FDD17EF869D-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "202604271613295B417AF6EA48C6238192"
+        }
+      }
+    },
+    {
+      "url": "https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-alpha.bf5fea/libs/cn/index.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/1374.2bc404d39c.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc03:14:116::145",
+          "x-ser": "i93840_c28996, i90878_c28779, i33897_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"ccd3d8762c2f716dbc02d224dc64f197\"",
+          "x-tos-request-id": "942049eb5e2732c469eb5e27-fdbdgdc03geg539gg54-a802d87",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i33897_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/1374.2bc404d39c.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:42 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:23 GMT",
+          "x-tos-hash-crc64ecma": "11235315480102651707",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-260427161203D48DAE04BC5E23240EE2-5509C48326E62AAB-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "20260427161203D48DAE04BC5E23240EE2"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/9580.95a060ef40.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc01:22:134::91",
+          "x-ser": "i37148_c26071, i62074_c26719, i33885_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"1442eae8c7799ae09e5ef54592a15516\"",
+          "x-tos-request-id": "93703fef09c85c9769ef09c8-a8049c2-fdbdgdc03g0g518gg35",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i33885_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/9580.95a060ef40.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Mon, 27 Apr 2026 06:51:36 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Mon, 27 Apr 2026 07:01:28 GMT",
+          "x-tos-hash-crc64ecma": "9118200747522354441",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-2604271612037ECCBDCCA68C2DD0315E-72C92C99385E9EF5-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "202604271612037ECCBDCCA68C2DD0315E"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/4826.4d4ed1b4d3.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc01:26:306::81",
+          "x-ser": "i57500_c25893, i91150_c28779, i36398_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"93548997d330cc3f028484f1598b6495\"",
+          "x-tos-request-id": "74d154eb5e2913cd69eb5e29-a815454-a86e14f",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i36398_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/4826.4d4ed1b4d3.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:45 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:25 GMT",
+          "x-tos-hash-crc64ecma": "15704030508635254794",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-2604271612035D82C90F748301D1A64A-0DFE60B74743C857-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "202604271612035D82C90F748301D1A64A"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/7919.0c4e66f969.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc02:22:591::145",
+          "x-ser": "i57518_c26071, i62706_c26719, i36360_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"5d1227c17a0e5f3b086abc122eb090d6\"",
+          "x-tos-request-id": "6d3743ef09ccdedc69ef09cc-a808526-a811612",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i36360_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/7919.0c4e66f969.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Mon, 27 Apr 2026 06:51:46 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Mon, 27 Apr 2026 07:01:33 GMT",
+          "x-tos-hash-crc64ecma": "7446334004833513405",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-260427161233623036CE2A6FCADF5F78-0BD68FB33AC31721-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "20260427161233623036CE2A6FCADF5F78"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/5514.05c1d79ba6.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc01:29:602::101",
+          "x-ser": "i37164_c26063, i33607_c26321, i33897_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"df2e8fdea2466a2e1e8adb024714c497\"",
+          "x-tos-request-id": "74c3f8eb5e27f91669eb5e27-a814f68-a802b21",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i33897_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/5514.05c1d79ba6.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:32 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:23 GMT",
+          "x-tos-hash-crc64ecma": "18377109827254200351",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-2604242016068B4746964E547781EE2A-14D914BA168D04E5-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "202604242016068B4746964E547781EE2A"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/3828.88a1262d27.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/3964.7fe6216c72.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/1069.ccd1369531.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc02:20:772::222",
+          "x-ser": "i93570_c28996, i90878_c28779, i36398_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"3e658236f46e4dadaee0b1b541bb5a72\"",
+          "x-tos-request-id": "6ccedeb5e2893a769eb5e28-fdbdgdc03g1bg508gg47-a86e14f",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=3",
+          "x-cache": "HIT from i36398_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/js/async/1069.ccd1369531.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:42 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:24 GMT",
+          "x-tos-hash-crc64ecma": "7370163731748676030",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-260427161328CB9C0590530D91DE28FF-43BDE0522A0EFAE6-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "20260427161328CB9C0590530D91DE28FF"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/7804.f30a3cb6e9.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/6146.58d53986ec.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/5705.aa1543a20f.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/css/async/9141.32f0ee00c8.css",
+      "method": "GET",
+      "resource_type": "stylesheet",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc02:20:772::223",
+          "x-ser": "i91598_c28996, i62152_c26719, i33891_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"42f23c7a7286ea194bd5a0309c60b2c2\"",
+          "x-tos-request-id": "6be5eb5e32881b69eb5e32-a81704a-a803d96",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=4",
+          "x-cache": "HIT from i33891_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/css/async/9141.32f0ee00c8.css",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:42 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:34 GMT",
+          "x-tos-hash-crc64ecma": "2195367041648278059",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-2604271612334C9CEBA4AB613BDAC2F2-133E913F40A7B139-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "202604271612334C9CEBA4AB613BDAC2F2"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/9141.aef712a2b3.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/css/async/6555.ef22bc9ff3.css",
+      "method": "GET",
+      "resource_type": "stylesheet",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc01:27:81::24",
+          "x-ser": "i37418_c25893, i33607_c26321, i33885_c29760",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "content-encoding": "gzip",
+          "etag": "W/\"282d8fd96609bad900427bfd7cf96016\"",
+          "x-tos-request-id": "a916caeb5e32b4b069eb5e32-a802650-a81548a",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=4",
+          "x-cache": "HIT from i33885_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/coze-web-cn/coze-space/static/static/css/async/6555.ef22bc9ff3.css",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Accept-Encoding",
+          "last-modified": "Fri, 24 Apr 2026 12:08:42 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=2592000",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Fri, 24 Apr 2026 12:12:34 GMT",
+          "x-tos-hash-crc64ecma": "1078791820312538715",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-26042420161438297733D278C77E56E2-3C9ED94C1A1A14C2-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "2026042420161438297733D278C77E56E2"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/static/js/async/6555.ece1f08ec5.js",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    }
+  ],
+  "dom_snippet": "<div role=\"group\" data-slot=\"input-group-addon\" data-align=\"inline-start\" class=\"text-muted-foreground flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&amp;&gt;svg:not([class*='size-'])]:size-4 [&amp;&gt;kbd]:rounded-[calc(var(--radius)-0.3125rem)] group-data-[disabled=true]/input-group:opacity-50 bg-transparent dark:bg-transparent order-first pl-3 has-[&gt;button]:ml-[-0.45rem] has-[&gt;kbd]:ml-[-0.35rem]\"><span class=\"text-muted-foreground flex items-center gap-2 text-sm [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-search\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"></path><circle cx=\"11\" cy=\"11\" r=\"8\"></circle></svg></span></div>\n<input class=\"file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input w-full min-w-0 transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-background file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-ring focus-visible:ring-outline aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 px-3 py-1 text-base md:text-sm flex-1 rounded-none border-0 bg-transparent dark:bg-transparent shadow-none focus-visible:ring-0\" data-slot=\"input-group-control\" placeholder=\"搜索更多技能\" value=\"\" style=\"\">",
+  "target_bbox": {
+    "x": 1100,
+    "y": 24,
+    "width": 201,
+    "height": 36
+  }
+}

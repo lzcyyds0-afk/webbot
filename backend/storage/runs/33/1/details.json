@@ -1,0 +1,77 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=volc_fe_portal_intelligent_assistant",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://console.volcengine.com/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=9",
+          "date": "Fri, 01 May 2026 08:11:20 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e3501c82b17b384fcc9f0eaaf9adc9e31495ed4a1988035f4f45a579ad1cfa86b91d8c2744fb3a557893aae09022ec524e814fdae8476ee1f55d4606751f352b51363739e6e1d73549131886ae2f5f313d12f940fd823a4b3da2263b0b950198aed",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777623080691626",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "vcache13.cn4590[41,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "7ae1d6a117776230806692180e",
+          "x-tt-trace-id": "00-260501161120541232C5219FC96E0621-5DA5895920A1DE79-00",
+          "x-tt-logid": "20260501161120541232C5219FC96E0621",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=volc_console",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://console.volcengine.com/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=14",
+          "date": "Fri, 01 May 2026 08:11:21 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35bd6b793f625dd932d05bcbe9dbf5ab56b6da610bf0ce6cd49b582671af9ebdc2dc6612a6168b8ec9df77be498901009afa6cd06f00cd780de391e93842179ba1589522d5e18f5c1ecebc751e994d6f31",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777623081874830",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "vcache13.cn4590[175,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "7ae1d6a117776230817253789e",
+          "x-tt-trace-id": "00-260501161121B857BB3C63F7D1E7013E-102A6FC41BA82390-00",
+          "x-tt-logid": "20260501161121B857BB3C63F7D1E7013E",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

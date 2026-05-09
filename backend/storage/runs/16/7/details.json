@@ -1,0 +1,320 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://mcs.zijieapi.com/list",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json; charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "1800",
+          "access-control-allow-methods": "GET, OPTIONS, HEAD, PUT, POST",
+          "expires": "0",
+          "server-timing": "cdn-cache;desc=MISS, edge;dur=1, origin;dur=50, inner; dur=10",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e3529c924bbab53d97bbef2e7413c931d2919c3c7d4959fbf8d5da198ff0feb4c0e9e87a588bf65232a30ca4605e1534cc403ac952e1a85427a5e7e8125e437ebbd8db268ac791e1631a7e4d44aa61c04a9309b51cd6d603f0574bbcc4ab0f064bd562dc2bccf333f01af9abecf1ad65830",
+          "x-tt-supplier-id": "0_9",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "upstream-caught": "1776875110549128",
+          "pragma": "no-cache",
+          "cross-origin-resource-policy": "cross-origin",
+          "access-control-allow-credentials": "true",
+          "x-tt-trace-tag": "id=26;cdn-cache=miss;type=dyn",
+          "via": "CHN-JSwuxi-AREACT2-CACHE15[51],CHN-JSwuxi-AREACT2-CACHE15[ovl,50]",
+          "x-ccdn-errcode-src": "20",
+          "access-control-allow-origin": "https://www.coze.cn",
+          "x-tt-trace-id": "00-260423002510CE807B86031EAAA777A9-6DF9E386599FB8FF-00",
+          "content-length": "21",
+          "x-tt-logid": "20260423002510CE807B86031EAAA777A9",
+          "server": "TLB"
+        }
+      }
+    },
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=bot_developer",
+      "method": "POST",
+      "resource_type": "ping",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=7",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35385429ded90e549c545d2294f48a4bf8b62bb01a570f47caae2c1c119afa50ed136c08609628134f824f38ba92d40218c440576ecc94b865172024f519508758674fbe244e5d9b4c55b805f2924fad21",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1776875110498306",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache27.cn6483[33,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3ade232017768751104816990e",
+          "x-tt-trace-id": "00-260423002510BC9DD9153D3EDB468F13-60BC235C69220B98-00",
+          "x-tt-logid": "20260423002510BC9DD9153D3EDB468F13",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=bot_developer",
+      "method": "POST",
+      "resource_type": "ping",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=9",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35c3f4f82d8a647a38068ad9f4fd0769c9e29aecb9d121b7b23bc89dfa3982a04f42e64ff246812572721c2299f0aa507f97eb13516762d22ebc241920fa83a290b30e1e7514085fb185be753ff0545725f11261bc86bf1e125030ac2b6afd72bd",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1776875110564893",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache27.cn6483[39,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3ade232017768751105437228e",
+          "x-tt-trace-id": "00-260423002510203D0C5FAF0F9B3297CE-66AD41E81D984F16-00",
+          "x-tt-logid": "20260423002510203D0C5FAF0F9B3297CE",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=97179855&Ver=2&mid=157f14e4-abe3-43c7-bdf5-3b5394f6217c&bo=1&sid=d53367a03e6711f198f88d5ad074b3be&vid=d53388203e6711f1af19573a76383dff&vids=1&msclkid=N&pi=918639831&lg=zh-CN&sw=1440&sh=900&sc=24&nwd=1&tl=%E6%89%A3%E5%AD%90&kw=%E6%89%A3%E5%AD%90,%20Coze,%20AI%20Agent,%20%E6%99%BA%E8%83%BD%E5%8A%9E%E5%85%AC,%20%E5%8A%9E%E5%85%AC%E6%8F%90%E6%95%88,%20AI%E5%86%99%E4%BD%9C,%20PPT%E7%94%9F%E6%88%90,%20%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91,%20%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7&p=https%3A%2F%2Fwww.coze.cn%2Fsign%2Foauth%3Fredirect%3Dhttps%253A%252F%252Fwww.coze.cn%252F%253Flogin_from%253Dspace_landing%2526sign_up_from%253Dintro%26platform%3Dvolcano&r=https%3A%2F%2Fwww.coze.cn%2Foverview&lt=1148&evt=pageLoad&sv=2&cdb=AQAQ&rn=390583",
+      "method": "GET",
+      "resource_type": "image",
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "cache-control": "no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "accept-ch": "Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version",
+          "x-msedge-ref": "Ref A: 65704183DA4C4AD6A2991C8D21D1D592 Ref B: SG2AA1040520023 Ref C: 2026-04-22T16:25:10Z",
+          "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+          "access-control-allow-origin": "*",
+          "x-cache": "CONFIG_NOCACHE",
+          "date": "Wed, 22 Apr 2026 16:25:09 GMT"
+        }
+      }
+    },
+    {
+      "url": "https://signin-saas.volccloudidentity.com/api/cloudidentity/authorize/generalAuth?client_id=9836804098&redirect_uri=https%3A%2F%2Fwww.coze.cn%2Fauth%2Fcallback&response_type=code&extra=%7B%22volc_ci_ctx%22%3A%7B%7D%2C%22common%22%3A%7B%7D%7D&state=%7B%22platform%22%3A%22eps_cloud_identity%22%2C%22navigatePath%22%3A%22https%3A%2F%2Fwww.coze.cn%2F%3Flogin_from%3Dspace_landing%26sign_up_from%3Dintro%22%2C%22type%22%3A%22login%22%7D",
+      "method": "GET",
+      "resource_type": "document",
+      "response": {
+        "status": 302,
+        "status_text": "",
+        "headers": {
+          "access-control-allow-credentials": "true",
+          "content-length": "1148",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "eagleid": "dde72fa417768751104822791e",
+          "location": "https://signin.volcengine.com/api/passport/sso/OIDCAuth?client_id=490362313be302cd4bf07a084b99dbdf&response_type=code&redirect_uri=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2FcloudIdentity%2Fpassport%2Fcallback&state=%257B%2522platform%2522%253A%2522eps_cloud_identity%2522%252C%2522navigatePath%2522%253A%2522https%253A%252F%252Fwww.coze.cn%252F%253Flogin_from%3Dspace_landing%26sign_up_from%3Dintro%2522%252C%2522type%2522%253A%2522login%2522%257D%26redirect_uri%3Dhttps%253A%252F%252Fsignin-saas.volccloudidentity.com%252Fapi%252Fcloudidentity%252Fauthorize%252FfederateOAuth%253Fclient_id%253D9836804098%2526state%253D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522https%25253A%25252F%25252Fwww.coze.cn%25252F%25253Flogin_from%25253Dspace_landing%252526sign_up_from%25253Dintro%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%2526response_type%253Dcode%2526redirect_uri%253Dhttps%25253A%25252F%25252Fwww.coze.cn%25252Fauth%25252Fcallback%2526scenario%253Dcoze%26client_id%3D9836804098%26scenario%3Dcoze&scenario=coze",
+          "server": "Tengine",
+          "server-timing": "inner; dur=5,inner; dur=3\ncdn-cache;desc=MISS,edge;dur=0,origin;dur=94",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "timing-allow-origin": "*",
+          "vary": "Origin",
+          "via": "ens-cache16.cn7444[94,0]",
+          "x-content-type-options": "nosniff",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-tt-logid": "202604230025102A53A1E2955F356B7D39",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35a999c1e9dd79f00ede994ef3fdbb49a59f18d2a00fec3fba75456cdaab992f785c8c237ab9354bbe75c49722857a47ec3a5269f2d157460dddd8afb0f8e407fe",
+          "x-tt-trace-id": "00-2604230025102A53A1E2955F356B7D39-33DF944249599F9A-00",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "url": "https://signin.volcengine.com/api/passport/sso/OIDCAuth?client_id=490362313be302cd4bf07a084b99dbdf&response_type=code&redirect_uri=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2FcloudIdentity%2Fpassport%2Fcallback&state=%257B%2522platform%2522%253A%2522eps_cloud_identity%2522%252C%2522navigatePath%2522%253A%2522https%253A%252F%252Fwww.coze.cn%252F%253Flogin_from%3Dspace_landing%26sign_up_from%3Dintro%2522%252C%2522type%2522%253A%2522login%2522%257D%26redirect_uri%3Dhttps%253A%252F%252Fsignin-saas.volccloudidentity.com%252Fapi%252Fcloudidentity%252Fauthorize%252FfederateOAuth%253Fclient_id%253D9836804098%2526state%253D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522https%25253A%25252F%25252Fwww.coze.cn%25252F%25253Flogin_from%25253Dspace_landing%252526sign_up_from%25253Dintro%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%2526response_type%253Dcode%2526redirect_uri%253Dhttps%25253A%25252F%25252Fwww.coze.cn%25252Fauth%25252Fcallback%2526scenario%253Dcoze%26client_id%3D9836804098%26scenario%3Dcoze&scenario=coze",
+      "method": "GET",
+      "resource_type": "document",
+      "headers": {
+        "referer": "https://www.coze.cn/",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Linux\""
+      },
+      "response": {
+        "status": 302,
+        "status_text": "Found",
+        "headers": {
+          "connection": "keep-alive",
+          "content-length": "2875",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "location": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522https%25253A%25252F%25252Fwww.coze.cn%25252F%25253Flogin_from%253Dspace_landing%2526sign_up_from%253Dintro%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522https%2525253A%2525252F%2525252Fwww.coze.cn%2525252F%2525253Flogin_from%2525253Dspace_landing%25252526sign_up_from%2525253Dintro%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26auto_confirm%3D1&scenario=coze",
+          "server": "volc-dcdn",
+          "server-timing": "inner; dur=6, cdn-cache;desc=MISS,  origin;dur=73, edge;dur=17,  cdn-cache;desc=MISS",
+          "vary": "Origin",
+          "x-dsa-origin-status": "302",
+          "x-need-token": "8b13c7ddf17a645320fff792b453c01c",
+          "x-tt-logid": "20260423002510D71351E35FDBC6DA4116",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35b17d3f25d55bfc343774bfff91318093aaf1e2f57f4ae55950ead01a28839d683b2a7defb2902f72ca574a5c822c1b0b3d059828f2cc7065015948a7aecc5a57b488f838af6d33c16d628d0355cc82bc",
+          "x-tt-trace-id": "00-b60282a7030105c3e1e78c39d9630000-b60282a7030105c3-01",
+          "x-tt-trace-tag": "id=5",
+          "via": "n157-056-076.qdmp.Creative,n172-009-200.yzmp-ct.Creative",
+          "x-dsa-trace-id": "17768751102673e41de00372a71e34740a28b65fa4",
+          "x-request-ip": "115.239.222.23"
+        }
+      }
+    },
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=bot_developer",
+      "method": "POST",
+      "resource_type": "ping",
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=9",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e353fc02c2af82d6eeaa551ccdef8008e6190092aadcb76d86dacc9f1f929d612203639092f1600036f4aee91233ca3c999d7a6f34e23e501cfc866cfa56c97cf11ab5b28601cdca5f8c14427202a95b018",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1776875110598643",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache27.cn6483[39,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3ade232017768751105807375e",
+          "x-tt-trace-id": "00-260423002510BC60AD3785C3744EF3B6-393B207C7BE03A38-00",
+          "x-tt-logid": "20260423002510BC60AD3785C3744EF3B6",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://bat.bing.com/p/insights/t/97151251",
+      "method": "GET",
+      "resource_type": "script",
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+          "cache-control": "no-cache, no-store",
+          "accept-ch": "Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version",
+          "x-msedge-ref": "Ref A: 05E3C8F0F697427AAA5C121D7A1FAB3B Ref B: SG2AA1040520023 Ref C: 2026-04-22T16:25:10Z",
+          "request-context": "appId=cid-v1:a894a21c-0197-44e5-b203-3cbc01252c82",
+          "expires": "-1",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-length": "766",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "content-type": "application/x-javascript"
+        }
+      }
+    },
+    {
+      "url": "https://bat.bing.com/p/insights/s/0.8.59",
+      "method": "GET",
+      "resource_type": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=97151251&Ver=2&mid=78f5c2d1-112b-46a1-a24a-ad0a8149cdaa&bo=1&sid=d53367a03e6711f198f88d5ad074b3be&vid=d53388203e6711f1af19573a76383dff&vids=0&msclkid=N&pi=918639831&lg=zh-CN&sw=1440&sh=900&sc=24&nwd=1&tl=%E6%89%A3%E5%AD%90&kw=%E6%89%A3%E5%AD%90,%20Coze,%20AI%20Agent,%20%E6%99%BA%E8%83%BD%E5%8A%9E%E5%85%AC,%20%E5%8A%9E%E5%85%AC%E6%8F%90%E6%95%88,%20AI%E5%86%99%E4%BD%9C,%20PPT%E7%94%9F%E6%88%90,%20%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91,%20%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7&p=https%3A%2F%2Fwww.coze.cn%2Fsign%2Foauth%3Fredirect%3Dhttps%253A%252F%252Fwww.coze.cn%252F%253Flogin_from%253Dspace_landing%2526sign_up_from%253Dintro%26platform%3Dvolcano&r=https%3A%2F%2Fwww.coze.cn%2Foverview&lt=1148&evt=pageLoad&sv=2&cdb=AQAQ&rn=671412",
+      "method": "GET",
+      "resource_type": "image",
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "cache-control": "no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "accept-ch": "Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version",
+          "x-msedge-ref": "Ref A: E0D0F114F39C4359912008878129E79D Ref B: SG2AA1040520023 Ref C: 2026-04-22T16:25:10Z",
+          "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+          "access-control-allow-origin": "*",
+          "x-cache": "CONFIG_NOCACHE",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT"
+        }
+      }
+    },
+    {
+      "url": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522https%25253A%25252F%25252Fwww.coze.cn%25252F%25253Flogin_from%253Dspace_landing%2526sign_up_from%253Dintro%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522https%2525253A%2525252F%2525252Fwww.coze.cn%2525252F%2525253Flogin_from%2525253Dspace_landing%25252526sign_up_from%2525253Dintro%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26auto_confirm%3D1&scenario=coze",
+      "method": "GET",
+      "resource_type": "document",
+      "headers": {
+        "referer": "https://www.coze.cn/",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Linux\""
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+          "cache-control": "no-store",
+          "content-encoding": "br",
+          "content-security-policy": "frame-ancestors vip.byted.org ad.oceanengine.com 'self' *.jinritemai.com *.bytedance.net *.force.com *.byteeducation.cn *.volcengine.com cloud.xfl.net data.xfl.net cloud-boe.sinf.net cloud.sinf.net cloud.douyin.com *.feishu.cn mfs.sinf.net *.larkoffice.com partner-cloud.douyin.com life.douyin.com developer.open-douyin.com partner.open-douyin.com *.open.douyin.com",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 22 Apr 2026 16:25:10 GMT",
+          "eagleid": "dde7531617768751107742979e",
+          "server": "Tengine",
+          "server-timing": "inner; dur=100\ncdn-cache;desc=MISS,edge;dur=0,origin;dur=190",
+          "timing-allow-origin": "*",
+          "vary": "Accept-Encoding",
+          "via": "cache2.cn6484[190,0]",
+          "x-need-token": "8b13c7ddf17a645320fff792b453c01c",
+          "x-tt-logid": "20260423002510939E87D1D3D182AEBFA5",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35ea55c4b18c7430515e704d7aee8a5da3d641a4004e6f1b7e8fcfa499763713926d51c512f57b04df35179b5bdf6c8c4149d2abafef9a38b35de8ec921457f07c",
+          "x-tt-trace-id": "00-260423002510939E87D1D3D182AEBFA5-559718AD3569D9CC-00",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

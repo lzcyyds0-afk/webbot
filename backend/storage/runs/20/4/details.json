@@ -1,0 +1,24 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/16861692340/?random=1776875392865&cv=11&fst=1776875392865&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be64k0v9224080844z89226791911za20gzb9226791911zd9226791911xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.coze.cn%2Foverview&ref=https%3A%2F%2Fwww.coze.cn%2F&rcb=18&label=BUgVCKiltekaELSDpOg-&capi=1&frm=0&tiba=%E6%89%A3%E5%AD%90%20Coze%20-%20%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%97%97%E4%B8%8B%E8%81%8C%E5%9C%BAAI%E4%BC%99%E4%BC%B4%E6%89%A3%E5%AD%90%E4%B8%8E%E4%B8%80%E7%AB%99%E5%BC%8FAI%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%20P&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=2092555947.1776875391&uaa=x86&uab=64&uafvl=Google%2520Chrome%3B147.0.7727.55%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.55&uamb=0&uam=&uap=Linux&uapv=&uaw=0&ec_mode=a&_tu=CA&gcl_ctr=3~0~0~0&category=acrcp_v1_512&em=tv.1&fmt=7",
+      "method": "GET",
+      "resource_type": "fetch",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    }
+  ],
+  "dom_snippet": "<button class=\"items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none shrink-0 [&amp;_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer transition hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[&gt;svg]:px-3 [&amp;_svg:not([class*='size-'])]:size-4.5 focus-visible:border-ring focus-visible:ring-outline h-[36px] rounded-full bg-none! hover:bg-none! font-normal hover:font-medium hidden md:flex outline-none! border-none! focus-visible:ring-0 focus-visible:ring-offset-0\" data-state=\"closed\" data-slot=\"hover-card-trigger\">资源<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button>\n<button class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none shrink-0 [&amp;_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer transition bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 has-[&gt;svg]:px-3 [&amp;_svg:not([class*='size-'])]:size-4.5 focus-visible:border-ring focus-visible:ring-outline focus-visible:ring-[0.1875rem] h-[36px] rounded-full font-normal white-button\">联系销售</button>\n<div class=\"absolute\"></div>",
+  "target_bbox": {
+    "x": 1170,
+    "y": 16,
+    "width": 90,
+    "height": 36
+  }
+}

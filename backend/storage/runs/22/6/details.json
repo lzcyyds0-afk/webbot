@@ -1,0 +1,11 @@
+{
+  "console_logs": [],
+  "network_requests": [],
+  "dom_snippet": "<button type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"radix-:r2:-content-space\" data-state=\"active\" id=\"radix-:r2:-trigger-space\" data-slot=\"tabs-trigger\" class=\"dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-outline focus-visible:outline-ring dark:text-muted-foreground inline-flex h-[calc(100%-0.0625rem)] items-center justify-center gap-1.5 font-medium whitespace-nowrap focus-visible:ring-[0.1875rem] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 text-muted-foreground data-[state=active]:text-foreground data-[state=active]:border-primary dark:data-[state=active]:border-primary hover:text-primary rounded-none border-0 border-b-2 border-transparent bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:bg-transparent border-none text-[20px] p-0 transition-none truncate flex-initial inline! max-w-[50%]\" tabindex=\"-1\" data-orientation=\"horizontal\" data-radix-collection-item=\"\">技能商店</button>",
+  "target_bbox": {
+    "x": 280,
+    "y": 27,
+    "width": 80,
+    "height": 30
+  }
+}

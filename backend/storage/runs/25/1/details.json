@@ -1,0 +1,82 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=volc_console",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://console.volcengine.com/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=13",
+          "date": "Wed, 29 Apr 2026 04:12:25 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35e32566a55b9e4c177d247d1f5560d21d0fc28f39673468929977d2f1a131786aaafe83231c0f9578ac4c15e9717a063ff74b3ed2407fbb605b41944eecb72076101da955c96105a21d326b352807113b87f8c7c0e91a9cb4753c8a30fdc96486",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777435945075310",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache16.cn3445[57,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3dae2b2417774359450358811e",
+          "x-tt-trace-id": "00-26042912122514C005035FB4175BD1D6-2999C021580776ED-00",
+          "x-tt-logid": "2026042912122514C005035FB4175BD1D6",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://mcs.zijieapi.com/list",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://console.volcengine.com/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json; charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "1800",
+          "access-control-allow-methods": "GET, OPTIONS, HEAD, PUT, POST",
+          "expires": "0",
+          "server-timing": "cdn-cache;desc=MISS, edge;dur=1, origin;dur=72, inner; dur=14",
+          "date": "Wed, 29 Apr 2026 04:12:25 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e3575d615464e9a2dbd90bb705a193a6cf34557a1c37e599a36d170c6091adf05e984dc5567483b3f9ebd9c30755baa85c5966215d7d2d2b46afe33fd739c49816fb4e17b64034ae731d66321867cfcc71f32b4a154d3a3f90dbb27c38860280bd1",
+          "x-tt-supplier-id": "0_9",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "upstream-caught": "1777435945554013",
+          "pragma": "no-cache",
+          "cross-origin-resource-policy": "cross-origin",
+          "access-control-allow-credentials": "true",
+          "x-tt-trace-tag": "id=26;cdn-cache=miss;type=dyn",
+          "via": "CHN-ZJwenzhou-CT16-CACHE3[73],CHN-ZJwenzhou-CT16-CACHE3[ovl,72]",
+          "x-ccdn-errcode-src": "20",
+          "access-control-allow-origin": "https://console.volcengine.com",
+          "x-tt-trace-id": "00-260429121225FA7AE8B0BFBD85C4D398-6202919A7158A52C-00",
+          "content-length": "21",
+          "x-tt-logid": "20260429121225FA7AE8B0BFBD85C4D398",
+          "server": "TLB"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

@@ -1,0 +1,46 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://mssdk.bytedance.com/web/common?ms_appid=751148&msToken=LnouIvOaNkuNAfTA1zynF4dxzqhM3Y7PILrtwYp2yCti4fpueelt9zhkHPQQ_CTghLFXedg1hUZSPRnihWHqIfU3ERo_DYAYvDYbbYNnDVVzWyAtXe4MvlYONiZmBAy1jpQUnFXVXUuvOVlBPNf3MwPHwbaqqtMiI1A%3D",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-ms-token": "F6ifOFbdPl-oimm30cmVpRDzix3saSgx9koyy0vwZg_IiWyZ8rD0P4O90GW1chTc3nmmOrmVOoRdtE-3gtu5UcFOfG6INHRahruCAjK_UvQki8LEdGvxPOXm5FlwinzvRWm9UCkcYwJkP29tfwf7BqLB4Ajci1PZXCSyuDf0ORTNAJf2sH_TF7ThMQ==",
+          "access-control-expose-headers": "x-ms-token,x-ms-resp",
+          "access-control-allow-methods": "GET,POST,OPTIONS",
+          "server-timing": "inner; dur=25",
+          "date": "Wed, 22 Apr 2026 16:24:53 GMT",
+          "content-type": "text/plain; charset=utf-8",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35ec61bea93ad347b1872f7678f44483aa06fcd100a1754cc869e531318de18223d92525bd17993cd8ea00b5fde9b5a622eb09ecf0718a715da109bbea5537b9ee8a715d16ac87bdc32a91647bb8936c24",
+          "access-control-allow-headers": "x-mssdk-info,x-ms-req",
+          "x-tt-timestamp": "1776875093.856",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1776875093840581",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "access-control-allow-credentials": "true",
+          "via": "cache8.cn7596[81,0]",
+          "access-control-allow-origin": "https://www.coze.cn",
+          "x-tt-trace-id": "00-2604230024535E8CF61BCCED373BAF7C-011AE3431A82AEA3-00",
+          "content-length": "44",
+          "eagleid": "7555469c17768750937968415e",
+          "x-tt-logid": "202604230024535E8CF61BCCED373BAF7C",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

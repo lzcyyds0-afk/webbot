@@ -1,0 +1,93 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/space/intro.mp4",
+      "method": "GET",
+      "resource_type": "media",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "accept-encoding": "identity;q=1, *;q=0",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "range": "bytes=655360-",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 206,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc03:6:443::152",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "etag": "\"01fd41c13f7a0628797868ab062f1fd8-35\"",
+          "age": "2410775",
+          "x-tos-request-id": "1d59296ccdca86a0696ccdca-a838818-fdbdgdc03g0g50egg47",
+          "server-timing": "inner; dur=2",
+          "content-type": "video/mp4",
+          "last-modified": "Sun, 18 Jan 2026 10:58:01 GMT",
+          "x-cdn-request-id": "44a8bce53ffba6f0037df3b4088c6af9",
+          "x-tt-trace-host": "0183b83b39c83212b026a7ffbe1cca493616971cd78adf2d84e37c50a9095ba7cefa06c7884ecea647c7b09db333adc19132e80ca1a690513b0d9faa72348bd179ca80f7b8d4757f2909928a8816a36c70fc7f4071c139fca266e3bdf85335d02da6be0c078473bf13b34e4031f59f12b1",
+          "x-cache-status": "HIT from KS-CLOUD-XM-MP-01-01, HIT from KS-CLOUD-YANC-CT-91-07",
+          "x-tt-supplier-id": "0_3",
+          "cache-control": "max-age=2592000",
+          "content-range": "bytes 655360-188615448/188615449",
+          "accept-ranges": "bytes",
+          "x-tt-trace-id": "00-26011820110277DE18CD9896F29D0FCC-73DB2CE98A2C6988-00",
+          "x-link-via": "yancct91:443;xmmp01:443;",
+          "content-length": "187960089",
+          "x-response-cache": "edge_hit",
+          "server": "TLB",
+          "x-response-cinfo": "115.239.222.23",
+          "access-control-allow-methods": "GET, POST, OPTIONS, HEAD",
+          "expires": "Fri, 24 Apr 2026 18:50:16 GMT",
+          "date": "Wed, 25 Mar 2026 18:50:16 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/space/intro.mp4",
+          "x-tos-storage-class": "STANDARD",
+          "access-control-allow-headers": "*",
+          "x-mp-parts-count": "35",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=06;cdn-cache=hit;type=static",
+          "via": "fdbd:dc03:f:a36::18",
+          "x-tos-response-time": "Sun, 18 Jan 2026 12:10:50 GMT",
+          "x-tos-hash-crc64ecma": "1646250185335027421",
+          "access-control-allow-origin": "*",
+          "x-tt-logid": "2026011820110277DE18CD9896F29D0FCC"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/space/intro.mp4",
+      "method": "GET",
+      "resource_type": "media",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "accept-encoding": "identity;q=1, *;q=0",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "range": "bytes=7110656-",
+        "sec-ch-ua-mobile": "?0"
+      }
+    },
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/16861692340/?random=1776875391832&cv=11&fst=1776875391832&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be64k0v9224080844z89226791911za20gzb9226791911zd9226791911xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.coze.cn%2Foverview&ref=https%3A%2F%2Fwww.coze.cn%2F&rcb=18&label=BUgVCKiltekaELSDpOg-&capi=1&frm=0&tiba=%E6%89%A3%E5%AD%90%20Coze%20-%20%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%97%97%E4%B8%8B%E8%81%8C%E5%9C%BAAI%E4%BC%99%E4%BC%B4%E6%89%A3%E5%AD%90%E4%B8%8E%E4%B8%80%E7%AB%99%E5%BC%8FAI%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%20P&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=2092555947.1776875391&uaa=x86&uab=64&uafvl=Google%2520Chrome%3B147.0.7727.55%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.55&uamb=0&uam=&uap=Linux&uapv=&uaw=0&ec_mode=a&_tu=CA&gcl_ctr=2~0~0~0&category=acrcp_v1_512&em=tv.1&fmt=7",
+      "method": "GET",
+      "resource_type": "fetch",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0"
+      }
+    }
+  ],
+  "dom_snippet": "<div class=\"flex justify-between items-center py-4\"><div class=\"absolute\"></div><a href=\"/overview\"><img alt=\"logo\" class=\"h-[30px] cursor-pointer\" src=\"/pages/_next/static/media/coze-2-logo.2ac43f8d.png\"></a><div class=\"flex gap-3\"><button class=\"items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none shrink-0 [&amp;_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer transition hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[&gt;svg]:px-3 [&amp;_svg:not([class*='size-'])]:size-4.5 focus-visible:border-ring focus-visible:ring-outline h-[36px] rounded-full bg-none! hover:bg-none! font-normal hover:font-medium hidden md:flex outline-none! border-none! focus-visible:ring-0 focus-visible:ring-offset-0\" data-state=\"closed\" data-slot=\"hover-card-trigger\">产品<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button class=\"items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none shrink-0 [&amp;_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer transition hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[&gt;svg]:px-3 [&amp;_svg:not([class*='size-'])]:size-4.5 focus-visible:border-ring focus-visible:ring-outline h-[36px] rounded-full bg-none! hover:bg-none! hidden md:flex outline-none! border-none! focus-visible:ring-0 focus-visible:ring-offset-0 font-normal hover:font-medium\" data-state=\"closed\" data-slot=\"hover-card-trigger\">企业版<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button class=\"items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none shrink-0 [&amp;_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer transition hover:text-accent-foreground dark:hover:bg-accent/50 px-4 py-2 has-[&gt;svg]:px-3 [&amp;_svg:not([class*='size-'])]:size-4.5 focus-visible:border-ring focus-visible:ring-outline h-[36px] rounded-full bg-none! hover:bg-none! font-normal hover:font-medium hidden md:flex outline-none! border-none! focus-visible:ring-0 focus-visible:ring-offset-0\" data-state=\"closed\" data-slot=\"hover-card-trigger\">资源<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button><button class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none shrink-0 [&amp;_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer transition bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 has-[&gt;svg]:px-3 [&amp;_svg:not([class*='size-'])]:size-4.5 focus-visible:border-ring focus-visible:ring-outline focus-visible:ring-[0.1875rem] h-[36px] rounded-full font-normal white-button\">联系销售</button><div class=\"absolute\"></div><button class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-e\n<!-- truncated -->",
+  "target_bbox": {
+    "x": 80,
+    "y": 0,
+    "width": 1280,
+    "height": 68
+  }
+}

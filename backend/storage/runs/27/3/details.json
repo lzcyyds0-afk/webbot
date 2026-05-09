@@ -1,0 +1,11 @@
+{
+  "console_logs": [],
+  "network_requests": [],
+  "dom_snippet": "<div role=\"group\" data-slot=\"input-group-addon\" data-align=\"inline-start\" class=\"text-muted-foreground flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium select-none [&amp;&gt;svg:not([class*='size-'])]:size-4 [&amp;&gt;kbd]:rounded-[calc(var(--radius)-0.3125rem)] group-data-[disabled=true]/input-group:opacity-50 bg-transparent dark:bg-transparent order-first pl-3 has-[&gt;button]:ml-[-0.45rem] has-[&gt;kbd]:ml-[-0.35rem]\"><span class=\"text-muted-foreground flex items-center gap-2 text-sm [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-search\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"></path><circle cx=\"11\" cy=\"11\" r=\"8\"></circle></svg></span></div>\n<input class=\"file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input w-full min-w-0 transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-background file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus-visible:border-ring focus-visible:ring-outline aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 px-3 py-1 text-base md:text-sm flex-1 rounded-none border-0 bg-transparent dark:bg-transparent shadow-none focus-visible:ring-0\" data-slot=\"input-group-control\" placeholder=\"搜索更多技能\" value=\"\" style=\"\">",
+  "target_bbox": {
+    "x": 1100,
+    "y": 24,
+    "width": 201,
+    "height": 36
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/space/intro.mp4",
+      "method": "GET",
+      "resource_type": "media",
+      "response": {
+        "status": 206,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc02:22:591::131",
+          "x-bdcdn-cache-status": "TCP_HIT",
+          "etag": "\"01fd41c13f7a0628797868ab062f1fd8-35\"",
+          "age": "2367271",
+          "x-tos-request-id": "18b2d99d2219f286699d2219-fdbdgdc02g24gf40gg39-a9ebe98",
+          "server-timing": "inner; dur=87",
+          "content-type": "video/mp4",
+          "last-modified": "Sun, 18 Jan 2026 10:58:01 GMT",
+          "x-cdn-request-id": "7b446c8735285587808c4746fcec37d9",
+          "x-tt-trace-host": "01dd2c814acdd1c02ede4e2c4d361a1c2fb1864e9386274bcc636c1f032b91eb4dd3f7e01a41e8c99d4042b892e0dd948368c5cc0bd67b0e8161454124d0805c7ef653560dba0c2bd4c52b2f3bbfad298c33fbc85d68a4c1128b2e07ca3f01c5b3b85b322f25c13071605202441cc3fbb64088f40d060ffc074ebc62c4b81d649c",
+          "x-cache-status": "HIT from KS-CLOUD-XM-MP-01-01, HIT from KS-CLOUD-NT-CT-03-01",
+          "x-tt-supplier-id": "0_3",
+          "cache-control": "max-age=2592000",
+          "content-range": "bytes 753664-188615448/188615449",
+          "accept-ranges": "bytes",
+          "x-tt-trace-id": "00-2602241346544D96D69660F69BCDDD86-1FA3684250181A56-00",
+          "x-link-via": "ntct03:443;xmmp01:443;",
+          "content-length": "187861785",
+          "x-response-cache": "edge_hit",
+          "server": "TLB",
+          "x-response-cinfo": "115.239.222.23",
+          "access-control-allow-methods": "GET, POST, OPTIONS, HEAD",
+          "expires": "Sat, 25 Apr 2026 06:53:32 GMT",
+          "date": "Thu, 26 Mar 2026 06:53:32 GMT",
+          "x-kfc-cachekey": "http://lf-coze-web-cdn.coze.cn/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/space/intro.mp4",
+          "x-tos-storage-class": "STANDARD",
+          "access-control-allow-headers": "*",
+          "x-mp-parts-count": "35",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=06;cdn-cache=hit;type=static",
+          "via": "fdbd:dc02:29:c20::53",
+          "x-tos-response-time": "Tue, 24 Feb 2026 03:59:21 GMT",
+          "x-tos-hash-crc64ecma": "1646250185335027421",
+          "access-control-allow-origin": "*",
+          "x-tt-logid": "202602241346544D96D69660F69BCDDD86"
+        }
+      }
+    },
+    {
+      "url": "https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/space/intro.mp4",
+      "method": "GET",
+      "resource_type": "media",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "accept-encoding": "identity;q=1, *;q=0",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "range": "bytes=13664256-",
+        "sec-ch-ua-mobile": "?0"
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

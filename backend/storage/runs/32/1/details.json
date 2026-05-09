@@ -1,0 +1,97 @@
+{
+  "console_logs": [
+    {
+      "type": "warning",
+      "text": "[VOLCENGINE-PLATFORM-FRAMEWORK] Error: swLancher-app-load-listener run timeout.\n    at https://res.gcloudcache.com/volc-fe/volcengine-platform-runtime/main.7dda1bf6.js:2:27156",
+      "location": {
+        "url": "https://res.gcloudcache.com/volc-fe/volcengine-platform-runtime/main.7dda1bf6.js",
+        "lineNumber": 1,
+        "columnNumber": 24935
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://res.gcloudcache.com/volc-fe/volcengine-platform-runtime/async.bdbbba4b.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522%25252Fspace%25252F7603373453596606514%25252Fproject-ide%25252F7631476750912520242%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%253D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522%2525252Fspace%2525252F7603373453596606514%2525252Fproject-ide%2525252F7631476750912520242%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26utm_source%3Dcoze%26utm_medium%3Dcoze_fusion%26utm_term%3Dcoze_signin%26utm_campaign%3Dfrom_coze%26utm_content%3Dcoze_signin%26auto_confirm%3D1&scenario=coze&utm_campaign=from_coze&utm_content=coze_signin&utm_medium=coze_fusion&utm_source=coze&utm_term=coze_signin",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://res.gcloudcache.com/volc-fe/vconsole-static/auth.coze-bg-20260119.5a88bca7.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522%25252Fspace%25252F7603373453596606514%25252Fproject-ide%25252F7631476750912520242%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%253D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522%2525252Fspace%2525252F7603373453596606514%2525252Fproject-ide%2525252F7631476750912520242%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26utm_source%3Dcoze%26utm_medium%3Dcoze_fusion%26utm_term%3Dcoze_signin%26utm_campaign%3Dfrom_coze%26utm_content%3Dcoze_signin%26auto_confirm%3D1&scenario=coze&utm_campaign=from_coze&utm_content=coze_signin&utm_medium=coze_fusion&utm_source=coze&utm_term=coze_signin",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://res.gcloudcache.com/volc-fe/volcengine-platform-runtime/core-js.7968a775.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522%25252Fspace%25252F7603373453596606514%25252Fproject-ide%25252F7631476750912520242%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%253D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522%2525252Fspace%2525252F7603373453596606514%2525252Fproject-ide%2525252F7631476750912520242%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26utm_source%3Dcoze%26utm_medium%3Dcoze_fusion%26utm_term%3Dcoze_signin%26utm_campaign%3Dfrom_coze%26utm_content%3Dcoze_signin%26auto_confirm%3D1&scenario=coze&utm_campaign=from_coze&utm_content=coze_signin&utm_medium=coze_fusion&utm_source=coze&utm_term=coze_signin",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://res.gcloudcache.com/volc-fe/vconsole-static/auth.coze-logo-20260116.4b4f0df0.png was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522%25252Fspace%25252F7603373453596606514%25252Fproject-ide%25252F7631476750912520242%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%253D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522%2525252Fspace%2525252F7603373453596606514%2525252Fproject-ide%2525252F7631476750912520242%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26utm_source%3Dcoze%26utm_medium%3Dcoze_fusion%26utm_term%3Dcoze_signin%26utm_campaign%3Dfrom_coze%26utm_content%3Dcoze_signin%26auto_confirm%3D1&scenario=coze&utm_campaign=from_coze&utm_content=coze_signin&utm_medium=coze_fusion&utm_source=coze&utm_term=coze_signin",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://res.gcloudcache.com/volc-fe/vconsole-static/auth.coze-left-cover-20260119.c3c0e749.png was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://console.volcengine.com/auth/login/?redirectURI=https%3A%2F%2Fsignin.volcengine.com%2Fapi%2Fpassport%2Fsso%2FOIDCAuth%3Fclient_id%3D490362313be302cd4bf07a084b99dbdf%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fsignin.volcengine.com%252Fapi%252Fpassport%252FcloudIdentity%252Fpassport%252Fcallback%26state%3D%25257B%252522platform%252522%25253A%252522eps_cloud_identity%252522%25252C%252522navigatePath%252522%25253A%252522%25252Fspace%25252F7603373453596606514%25252Fproject-ide%25252F7631476750912520242%252522%25252C%252522type%252522%25253A%252522login%252522%25257D%253D%2526redirect_uri%253Dhttps%25253A%25252F%25252Fsignin-saas.volccloudidentity.com%25252Fapi%25252Fcloudidentity%25252Fauthorize%25252FfederateOAuth%25253Fclient_id%25253D9836804098%252526state%25253D%2525257B%25252522platform%25252522%2525253A%25252522eps_cloud_identity%25252522%2525252C%25252522navigatePath%25252522%2525253A%25252522%2525252Fspace%2525252F7603373453596606514%2525252Fproject-ide%2525252F7631476750912520242%25252522%2525252C%25252522type%25252522%2525253A%25252522login%25252522%2525257D%252526response_type%25253Dcode%252526redirect_uri%25253Dhttps%2525253A%2525252F%2525252Fwww.coze.cn%2525252Fauth%2525252Fcallback%252526scenario%25253Dcoze%2526client_id%253D9836804098%2526scenario%253Dcoze%26scenario%3Dcoze%26utm_source%3Dcoze%26utm_medium%3Dcoze_fusion%26utm_term%3Dcoze_signin%26utm_campaign%3Dfrom_coze%26utm_content%3Dcoze_signin%26auto_confirm%3D1&scenario=coze&utm_campaign=from_coze&utm_content=coze_signin&utm_medium=coze_fusion&utm_source=coze&utm_term=coze_signin",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "network_requests": [
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=volc_console",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://console.volcengine.com/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=8",
+          "date": "Wed, 29 Apr 2026 04:58:13 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e350757346c46347e7a1d79e41f92bb71777e817903cc31499dca8e5fca6730c9ef57df809850937e5b8c5a1df8eb9c391ec1d3f428da2a3fca189865c5c5c956b3b6051aca362a40ee751947f20031f881",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777438693677771",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache15.cn6483[43,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3ade231417774386936522322e",
+          "x-tt-trace-id": "00-26042912581336A0E4A39FB97CA8AE14-6F9E78EC3E363B14-00",
+          "x-tt-logid": "2026042912581336A0E4A39FB97CA8AE14",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

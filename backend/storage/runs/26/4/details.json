@@ -1,0 +1,95 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://www.coze.cn/api/marketplace/product/list?entity_type=11&sort_type=4&page_num=1&page_size=50&keyword=AI+%E5%8A%A9%E6%89%8B&msToken=Da-208Viv9NkwH_X5SFVNrZxpIopfYB4AIpBPUwp4FY6xMBmhizKFusVL7tsd5H-0RtoGcPF0J-d2bTFH1Kw4ckIwzfpjUAuHL2012PYCpraoRyCFHJxWrqG8TD3mMW0DDtBUxtjHmhFWf_MfHChyX-Tqbcwjm-sTTIKzmwGleTTGbkf2NtjR41DkQ%3D%3D&a_bogus=x705DHyJdp%2FVOpCG8CxiHRnIOzC%2FrT8jsGTQROmqHxxVPXFTQfq0Wpb4bxoAsXgXBWQPQoV71DaMbfxculsw1MnkKmpkSp4fzmx9n60L2qqXb0isEHbsCu0FzwsF8RGL-QnXil65As0N1DclVHAkAd-G95z9BQbpWrMyd2u97jA83MWzD1pytcfgnH4SBax6%2FGwyHyE%3D",
+      "method": "GET",
+      "resource_type": "xhr",
+      "headers": {
+        "x-space-webid": "7634031640800642611",
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/skills",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0",
+        "agw-js-conv": "str",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "accept": "application/json, text/plain, */*"
+      }
+    },
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=coze_space",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=15",
+          "date": "Wed, 29 Apr 2026 04:21:52 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35eb32cf89d3bc309df1f355b13c002100172f51ebd250451577914aa7f097982605a8938acec942e99d2aec430f80baa3d9c5130d181095f09e7a3662371c1b8bc5ac4d4b52baa5e686a007759d29bf32742483e02c996ffe28565d860a4887df",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777436512004119",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache12.cn3445[89,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3dae2b2017774365119435788e",
+          "x-tt-trace-id": "00-2604291221513B5BB4023A59CC646291-5E267355489BA98F-00",
+          "x-tt-logid": "202604291221513B5BB4023A59CC646291",
+          "server": "Tengine"
+        }
+      }
+    },
+    {
+      "url": "https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-alpha.bf5fea/libs/cn/index.js",
+      "method": "GET",
+      "resource_type": "script",
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-request-ip": "fdbd:dc03:14:104::27",
+          "x-ser": "i33531_c25893, i33607_c26321, i33897_c29760",
+          "x-bdcdn-cache-status": "TCP_MISS",
+          "content-encoding": "br",
+          "etag": "W/\"ee7fc8e672c02b6314c3afaf8fb612e7\"",
+          "x-tos-request-id": "cbf91b7b48b0207b697b48b0-ac64729-ace6e21",
+          "server-timing": "cdn-cache;desc=HIT,edge;dur=1",
+          "x-cache": "HIT from i33897_c29760(cloudsvr)",
+          "date": "Wed, 29 Apr 2026 04:21:50 GMT",
+          "x-kfc-cachekey": "http://lf-cdn.coze.cn/unpkg/flow-platform/chat-app-sdk/1.2.0-alpha.bf5fea/libs/cn/index.js",
+          "content-type": "application/javascript",
+          "vary": "Accept-Encoding",
+          "last-modified": "Thu, 29 Jan 2026 11:46:22 GMT",
+          "x-tos-storage-class": "STANDARD",
+          "content-disposition": "attachment",
+          "x-tt-supplier-id": "0_4",
+          "cache-control": "max-age=3153600",
+          "timing-allow-origin": "*",
+          "x-tt-trace-tag": "id=09;cdn-cache=hit;type=static",
+          "x-tos-response-time": "Thu, 29 Jan 2026 11:46:56 GMT",
+          "x-tos-hash-crc64ecma": "12620662736008107419",
+          "access-control-allow-origin": "*",
+          "x-tt-trace-id": "00-26012919465625D7076CC14D8D1F9929-5BA3A6370CEEBFCE-00",
+          "x-response-cache": "edge_hit",
+          "x-response-cinfo": "115.239.222.23",
+          "server": "TLB",
+          "x-tt-logid": "2026012919465625D7076CC14D8D1F9929"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

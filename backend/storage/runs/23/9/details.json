@@ -1,0 +1,42 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=coze_space",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=14",
+          "date": "Thu, 23 Apr 2026 14:58:21 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e355dd9264b7d2840fdbc78b9803f1d585091b11ccb57dcddd8601ec5f494c910562f9d3f6d7fc7b4dc0a824bff80e134e1b1dd1ecf068b93acd2d9d64d07c861d6e1035b21cf3325a07987015d9d24b811",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1776956301637835",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "cache13.cn3833[57,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "79e4822117769563016046212e",
+          "x-tt-trace-id": "00-2604232258215C59B2A94F4B33E2666B-55FE69437CD29B17-00",
+          "x-tt-logid": "202604232258215C59B2A94F4B33E2666B",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

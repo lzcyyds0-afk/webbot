@@ -1,0 +1,52 @@
+{
+  "console_logs": [
+    {
+      "type": "warning",
+      "text": "[VOLCENGINE-PLATFORM-FRAMEWORK] Error: swLancher-app-load-listener run timeout.\n    at https://res.gcloudcache.com/volc-fe/volcengine-platform-runtime/main.7dda1bf6.js:2:27156",
+      "location": {
+        "url": "https://res.gcloudcache.com/volc-fe/volcengine-platform-runtime/main.7dda1bf6.js",
+        "lineNumber": 1,
+        "columnNumber": 24935
+      }
+    }
+  ],
+  "network_requests": [
+    {
+      "url": "https://mon.zijieapi.com/monitor_browser/collect/batch/?biz_id=volc_console",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://console.volcengine.com/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 204,
+        "status_text": "",
+        "headers": {
+          "access-control-max-age": "600",
+          "access-control-allow-methods": "POST, OPTIONS, GET",
+          "server-timing": "inner; dur=12",
+          "date": "Wed, 29 Apr 2026 04:54:25 GMT",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e35bd56a0ecb0df23c67848bab673864858f0139968b4a440e3930888f01c3f1f1dd8df6e7c6ad4c240417f095011d3ffd936147399ff19f798ce3b0e984b8d92cd51ee1dff9216bcbe817da3735025c8d0",
+          "access-control-allow-headers": "Content-Type,Content-Length,Accept-Encoding,X-CSRF-Token,accept,origin,Cache-Control,X-Requested-With,X-USE-PPE,X-TT-ENV",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1777438465775869",
+          "cross-origin-resource-policy": "cross-origin",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "via": "vcache19.cn3421[62,0]",
+          "access-control-allow-origin": "*",
+          "eagleid": "3ade1da717774384657343078e",
+          "x-tt-trace-id": "00-260429125425DC5F1E9719C4B96315AE-2E22DC1333E0AA1F-00",
+          "x-tt-logid": "20260429125425DC5F1E9719C4B96315AE",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

@@ -1,0 +1,41 @@
+{
+  "console_logs": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "location": {
+        "url": "https://httpbin.org/favicon.ico",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "network_requests": [
+    {
+      "url": "https://httpbin.org/cookies",
+      "method": "GET",
+      "resource_type": "document",
+      "headers": {
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Linux\""
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "*",
+          "content-length": "62",
+          "content-type": "application/json",
+          "date": "Wed, 29 Apr 2026 04:10:56 GMT",
+          "server": "gunicorn/19.9.0"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}

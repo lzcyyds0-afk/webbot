@@ -1,0 +1,56 @@
+{
+  "console_logs": [],
+  "network_requests": [
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16861692340/?random=1922354480&cv=11&fst=1776875392865&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be64k0v9224080844z89226791911za20gzb9226791911zd9226791911xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938466~115938468~117266401&u_w=1440&u_h=900&url=https%3A%2F%2Fwww.coze.cn%2Foverview&ref=https%3A%2F%2Fwww.coze.cn%2F&rcb=18&label=BUgVCKiltekaELSDpOg-&capi=1&frm=0&tiba=%E6%89%A3%E5%AD%90%20Coze%20-%20%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%97%97%E4%B8%8B%E8%81%8C%E5%9C%BAAI%E4%BC%99%E4%BC%B4%E6%89%A3%E5%AD%90%E4%B8%8E%E4%B8%80%E7%AB%99%E5%BC%8FAI%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%E6%89%A3%E5%AD%90%E7%BC%96%E7%A8%8B%20P&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=2092555947.1776875391&uaa=x86&uab=64&uafvl=Google%2520Chrome%3B147.0.7727.55%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.55&uamb=0&uam=&uap=Linux&uapv=&uaw=0&ec_mode=a&_tu=CA&gcl_ctr=3~0~0~0&category=acrcp_v1_512&em=tv.1&fmt=8&ct_cookie_present=false&crd=CLTesQII8t-xAgit4bECCKG4sQIIscGxAgiwwbECCLHDsQIIisWxAgjCybECCLTGsQIIk9qxAgjb3LECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgj02rECCJfUsQIIyduxAgix4bECCLPhsQIIpt2xAgiw3rECCIDbsQJKK3RyaWdnZXI7ZXZlbnQtc291cmNlLCBub3QtbmF2aWdhdGlvbi1zb3VyY2VaAwoBAWIDCgED&cerd=CgEA&eitems=ChAI8OOhzwYQnf3X0YH146MTEh0AvW1FkRXAF9FQH4d9RhyzPjsv7UcmmKjIb_F1DA&fsk=ChEI8OOhzwYQy-2I0MH1tu65ARIsADfqr1UZYeCiUjAA8imOFodhMnhN2i_PEEHuVxApITIh3vujpSedpxUVz4MaAppF&pscrd=IhMI6fbq1PCBlAMVlJzpBR3FhDqWMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOhRodHRwczovL3d3dy5jb3plLmNuL0JYQ2hFSThPT2h6d1lRMWNpang0LWdsNGFWQVJJdEFJOEVLWjBuZTVReVFXbnZoTjJYNnFMRXBrcnBoUzh4NDhsQVgxY3VvRGJrcGhwdHZ3NjZxZU1abHVvSnoMCAliCAgAEAAYACAA",
+      "method": "POST",
+      "resource_type": "fetch",
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {}
+      }
+    },
+    {
+      "url": "https://mssdk.bytedance.com/web/common?ms_appid=751148&msToken=ULjSp0X0fiwcAmgtIX_FgI349Xps9bJLRnFkR7QgpGANjWhvrfMkOJQSweWEydBVMPYYS5to77jnj1J2JJC9cplivLqmaMF0XhJOHI1IwGawAKfLoJOJwrLn300QkWulKQ5vpNBMOoByRjZWv6ldnzxrZK8nCizgR_0%3D",
+      "method": "POST",
+      "resource_type": "xhr",
+      "headers": {
+        "sec-ch-ua-platform": "\"Linux\"",
+        "referer": "https://www.coze.cn/",
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"",
+        "content-type": "text/plain;charset=UTF-8",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "response": {
+        "status": 200,
+        "status_text": "",
+        "headers": {
+          "x-ms-token": "o1Pde2NEEIFo3NU5k9E5j0El-I3Tgz0ZwlJM1gP8XxxnElnuazJoxFDXF09Uoyw-QOw9UXKDP-hx1c6YB20qT9V4AQBwBIPTOg1qQ3rVS2jFtUjeMuA7-qJ9-iQDDDFXEK87nvv9bNqkpu579xknXgcSKhtUq3iBhZ1tMQDXV5i1vIUdFKDBt9JxiQ==",
+          "access-control-expose-headers": "x-ms-token,x-ms-resp",
+          "access-control-allow-methods": "GET,POST,OPTIONS",
+          "server-timing": "inner; dur=18",
+          "date": "Wed, 22 Apr 2026 16:29:53 GMT",
+          "content-type": "text/plain; charset=utf-8",
+          "x-tt-trace-host": "0167914b70e839146928e7578c30df5e3567a426a742498201a3deea77ec2f491780da54363be2736ae9bcd23c977f0875c1c597700f056dfafa79aec852bd7ba73e67cd2e3363afa4a61f631a85608f2093fddfd76b3ab1838ded8ff8bb9bbb6adb745a6c2e7a0787e762787d89d7b657",
+          "access-control-allow-headers": "x-mssdk-info,x-ms-req",
+          "x-tt-timestamp": "1776875393.491",
+          "timing-allow-origin": "*",
+          "upstream-caught": "1776875393475302",
+          "x-tt-trace-tag": "id=03;cdn-cache=miss;type=dyn",
+          "access-control-allow-credentials": "true",
+          "via": "cache7.cn7596[117,0]",
+          "access-control-allow-origin": "https://www.coze.cn",
+          "x-tt-trace-id": "00-260423002953C915DAFAD6744933F699-641B7C5E3CE3F83D-00",
+          "content-length": "44",
+          "eagleid": "7555469b17768753933861176e",
+          "x-tt-logid": "20260423002953C915DAFAD6744933F699",
+          "server": "Tengine"
+        }
+      }
+    }
+  ],
+  "dom_snippet": null,
+  "target_bbox": null
+}
