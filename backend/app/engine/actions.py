@@ -89,9 +89,21 @@ class ActionExecutor:
         selector = ctx.params.get("selector", "")
         t0 = time.monotonic()
         try:
-            # Playwright click() has built-in auto-waiting (scroll into view,
-            # wait for visibility, stability, etc.) — more robust than manual wait.
-            await page.click(selector, timeout=15_000)
+            locator = page.locator(selector)
+            count = await locator.count()
+            if count > 1:
+                # Multiple matches: click the first visible one to avoid timing out
+                # on a hidden duplicate (e.g. collapsed sidebar entry vs main nav).
+                target = None
+                for i in range(count):
+                    if await locator.nth(i).is_visible():
+                        target = locator.nth(i)
+                        break
+                if target is None:
+                    target = locator.first
+                await target.click(timeout=15_000)
+            else:
+                await page.click(selector, timeout=15_000)
             elapsed = int((time.monotonic() - t0) * 1000)
             return StepResult(
                 step_index=ctx.step_index,
@@ -245,11 +257,15 @@ def _extract_selector(ctx: StepContext) -> str | None:
 async def _is_locator_healthy(page: Page, selector: str) -> bool:
     """Quick check: does the selector find at least one visible element within 3s?"""
     try:
-        count = await page.locator(selector).count()
+        locator = page.locator(selector)
+        count = await locator.count()
         if count == 0:
             return False
-        # Check visibility of the first match
-        return await page.locator(selector).first.is_visible(timeout=3_000)
+        # Consider healthy if any match is visible (not just the first)
+        for i in range(count):
+            if await locator.nth(i).is_visible():
+                return True
+        return False
     except (PwTimeout, Exception):
         return False
 

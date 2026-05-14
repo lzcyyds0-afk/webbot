@@ -11,18 +11,16 @@ import {
   Switch,
   Button,
   Card,
-  Collapse,
-  Divider,
   Popconfirm,
 } from 'antd';
 import {
-  RobotOutlined,
+  BulbOutlined,
   PlusOutlined,
   DeleteOutlined,
-  EditOutlined,
   EyeOutlined,
   CheckOutlined,
-  BulbOutlined,
+  RedoOutlined,
+  SlidersOutlined,
 } from '@ant-design/icons';
 import CookieExtractor from './CookieExtractor';
 import { useLLMStore } from '../stores/llmStore';
@@ -40,6 +38,8 @@ interface Props {
   open: boolean;
   projectId: number;
   baseUrl: string;
+  /** 预加载现有步骤，打开即可直接精调，无需重新生成 */
+  initialSteps?: StepDef[];
   onClose: (steps: StepDef[] | null) => void;
 }
 
@@ -53,7 +53,13 @@ const ACTION_COLORS: Record<string, string> = {
   connect: '#eb2f96',
 };
 
-export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: Props) {
+export default function AIGenerateModal({
+  open,
+  projectId,
+  baseUrl,
+  initialSteps,
+  onClose,
+}: Props) {
   const { configs, fetchConfigs } = useLLMStore();
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -64,15 +70,23 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
   const [editForm, setEditForm] = useState<StepDef>({ action: 'click' });
   const [refineFeedback, setRefineFeedback] = useState('');
   const [refining, setRefining] = useState(false);
+  // 是否是由 initialSteps 预载入的（区分"精调模式"和"生成结果模式"）
+  const [isPreloaded, setIsPreloaded] = useState(false);
 
   useEffect(() => {
     if (open) {
       fetchConfigs();
-      setResult(null);
       setError(null);
-      setEditingSteps([]);
       setEditingIndex(null);
       setRefineFeedback('');
+      setResult(null);
+      if (initialSteps && initialSteps.length > 0) {
+        setEditingSteps(initialSteps);
+        setIsPreloaded(true);
+      } else {
+        setEditingSteps([]);
+        setIsPreloaded(false);
+      }
     }
   }, [open]);
 
@@ -101,6 +115,7 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
       const resp = await generateSteps(req);
       setResult(resp);
       setEditingSteps(resp.steps);
+      setIsPreloaded(false);
     } catch (e: any) {
       if (e?.errorFields) return;
       setError(e?.response?.data?.detail || e.message || String(e));
@@ -137,11 +152,17 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
     onClose(null);
   };
 
+  /** 丢弃当前步骤，回到生成表单 */
+  const handleReset = () => {
+    setEditingSteps([]);
+    setResult(null);
+    setIsPreloaded(false);
+    setError(null);
+  };
+
   const handleDeleteStep = (index: number) => {
     setEditingSteps((prev) => prev.filter((_, i) => i !== index));
-    if (editingIndex === index) {
-      setEditingIndex(null);
-    }
+    if (editingIndex === index) setEditingIndex(null);
   };
 
   const handleStartEdit = (index: number) => {
@@ -177,41 +198,67 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
     });
   };
 
+  const showEditor = editingSteps.length > 0;
+
   return (
     <Modal
       title={
         <Space>
-          <RobotOutlined />
-          <span>AI 生成测试步骤</span>
+          <SlidersOutlined />
+          <span>AI 精调测试步骤</span>
         </Space>
       }
       open={open}
       onCancel={handleCancel}
       width={720}
       footer={
-        editingSteps.length > 0
+        showEditor
           ? [
-              <Button key="cancel" onClick={handleCancel}>取消</Button>,
+              <Button key="reset" icon={<RedoOutlined />} onClick={handleReset}>
+                从 URL 重新生成
+              </Button>,
+              <Button key="cancel" onClick={handleCancel}>
+                取消
+              </Button>,
               <Button key="apply" type="primary" onClick={handleApply}>
                 应用到编辑器
               </Button>,
             ]
           : [
-              <Button key="cancel" onClick={handleCancel}>取消</Button>,
-              <Button key="generate" type="primary" onClick={handleGenerate} loading={loading}>
+              <Button key="cancel" onClick={handleCancel}>
+                取消
+              </Button>,
+              <Button
+                key="generate"
+                type="primary"
+                onClick={handleGenerate}
+                loading={loading}
+              >
                 {loading ? '生成中...' : '生成'}
               </Button>,
             ]
       }
       destroyOnClose
     >
-      {/* Input form */}
-      {editingSteps.length === 0 && (
+      {/* ── 生成表单（无步骤时显示） ── */}
+      {!showEditor && (
         <Form form={form} layout="vertical" initialValues={{ url: baseUrl }}>
+          {isPreloaded ? null : (
+            <Alert
+              type="info"
+              showIcon
+              message="从探索页面保存的用例可直接在此精调，无需重新生成；也可在下方填写 URL 和目标从零生成。"
+              style={{ marginBottom: 16 }}
+            />
+          )}
+
           <Form.Item
             name="url"
             label="页面 URL"
-            rules={[{ required: true, message: '请输入 URL' }, { type: 'url', message: '请输入合法 URL' }]}
+            rules={[
+              { required: true, message: '请输入 URL' },
+              { type: 'url', message: '请输入合法 URL' },
+            ]}
           >
             <Input placeholder="https://app.example.com/page" />
           </Form.Item>
@@ -277,7 +324,7 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
         </Form>
       )}
 
-      {/* Loading */}
+      {/* 加载中 */}
       {loading && (
         <div style={{ textAlign: 'center', padding: '40px 0' }}>
           <Spin size="large" />
@@ -287,41 +334,60 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
         </div>
       )}
 
-      {/* Error */}
+      {/* 错误 */}
       {error && (
-        <Alert type="error" message="生成失败" description={error} style={{ marginBottom: 16 }} showIcon />
+        <Alert
+          type="error"
+          message="操作失败"
+          description={error}
+          style={{ marginBottom: 16 }}
+          showIcon
+        />
       )}
 
-      {/* Step Editor */}
-      {editingSteps.length > 0 && (
+      {/* ── 步骤编辑器 ── */}
+      {showEditor && (
         <div>
-          {result && (
+          {isPreloaded ? (
+            <Alert
+              type="info"
+              message="已载入现有步骤，可直接精调或从零重新生成"
+              style={{ marginBottom: 12 }}
+              showIcon
+            />
+          ) : result ? (
             <Alert
               type="success"
               message={`成功生成 ${result.steps.length} 个步骤${result.retry_used ? '（经过一次修正）' : ''}`}
               style={{ marginBottom: 12 }}
               showIcon
             />
-          )}
+          ) : null}
 
-          {/* Refine toolbar */}
+          {/* Refine 工具栏 */}
           <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
             <Input.TextArea
               value={refineFeedback}
               onChange={(e) => setRefineFeedback(e.target.value)}
-              placeholder="输入修改建议，例如：第3步之前加一个等待 / 把selector改成#submit"
+              placeholder="描述修改需求，例如：第3步之前加一个等待 / 把 selector 改成 #submit"
               rows={1}
               style={{ flex: 1 }}
+              onPressEnter={(e) => {
+                if (!e.shiftKey) {
+                  e.preventDefault();
+                  handleRefine();
+                }
+              }}
             />
             <Button icon={<BulbOutlined />} onClick={handleRefine} loading={refining}>
-              优化
+              AI 精调
             </Button>
             <Button icon={<PlusOutlined />} onClick={handleAddStep}>
               添加
             </Button>
           </div>
 
-          {/* Step list */}
+          {/* 步骤列表 */}
           <Space direction="vertical" style={{ width: '100%' }} size="small">
             {editingSteps.map((step, idx) => (
               <StepCard
@@ -337,6 +403,7 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
                 onMoveUp={() => handleMoveStep(idx, 'up')}
                 onMoveDown={() => handleMoveStep(idx, 'down')}
                 onUpdateEditForm={setEditForm}
+                totalSteps={editingSteps.length}
               />
             ))}
           </Space>
@@ -346,7 +413,7 @@ export default function AIGenerateModal({ open, projectId, baseUrl, onClose }: P
   );
 }
 
-// ── Step Card ──
+// ── StepCard ──
 
 function StepCard({
   index,
@@ -360,6 +427,7 @@ function StepCard({
   onMoveUp,
   onMoveDown,
   onUpdateEditForm,
+  totalSteps,
 }: {
   index: number;
   step: StepDef;
@@ -372,6 +440,7 @@ function StepCard({
   onMoveUp: () => void;
   onMoveDown: () => void;
   onUpdateEditForm: (s: StepDef) => void;
+  totalSteps: number;
 }) {
   const action = step.action || '?';
   const color = ACTION_COLORS[action] || '#8c8c8c';
@@ -389,7 +458,7 @@ function StepCard({
       <Card size="small" style={{ borderLeft: `3px solid ${color}` }} bodyStyle={{ padding: 8 }}>
         <Space direction="vertical" style={{ width: '100%' }} size="small">
           <Space>
-            <Text strong>#{index}</Text>
+            <Text strong>#{index + 1}</Text>
             <Tag color={color}>{editForm.action}</Tag>
           </Space>
           <Input
@@ -437,7 +506,9 @@ function StepCard({
             <Button size="small" type="primary" icon={<CheckOutlined />} onClick={onSaveEdit}>
               保存
             </Button>
-            <Button size="small" onClick={onCancelEdit}>取消</Button>
+            <Button size="small" onClick={onCancelEdit}>
+              取消
+            </Button>
           </Space>
         </Space>
       </Card>
@@ -452,14 +523,26 @@ function StepCard({
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Space>
-          <Text strong style={{ fontSize: 13 }}>#{index}</Text>
-          <Tag color={color} style={{ margin: 0 }}>{action}</Tag>
-          <Text type="secondary" style={{ fontSize: 12 }}>{paramSummary || '—'}</Text>
+          <Text strong style={{ fontSize: 13 }}>
+            #{index + 1}
+          </Text>
+          <Tag color={color} style={{ margin: 0 }}>
+            {action}
+          </Tag>
+          <Text type="secondary" style={{ fontSize: 12 }}>
+            {paramSummary || '—'}
+          </Text>
         </Space>
         <Space>
-          <Button size="small" onClick={onMoveUp} disabled={index === 0}>↑</Button>
-          <Button size="small" onClick={onMoveDown}>↓</Button>
-          <Button size="small" icon={<EyeOutlined />} onClick={onStartEdit}>编辑</Button>
+          <Button size="small" onClick={onMoveUp} disabled={index === 0}>
+            ↑
+          </Button>
+          <Button size="small" onClick={onMoveDown} disabled={index === totalSteps - 1}>
+            ↓
+          </Button>
+          <Button size="small" icon={<EyeOutlined />} onClick={onStartEdit}>
+            编辑
+          </Button>
           <Popconfirm title="删除此步骤？" onConfirm={onDelete}>
             <Button size="small" danger icon={<DeleteOutlined />} />
           </Popconfirm>

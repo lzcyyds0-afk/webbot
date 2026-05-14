@@ -4,7 +4,7 @@ import {
   PlayCircleOutlined,
   SaveOutlined,
   PlusOutlined,
-  RobotOutlined,
+  SlidersOutlined,
   EyeOutlined,
 } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
@@ -302,10 +302,11 @@ export default function TestCaseEditor({ projectId, testCase }: Props) {
         <Title level={4} style={{ margin: 0 }}>{testCase.name}</Title>
         <Space>
           <Button
-            icon={<RobotOutlined />}
+            icon={<SlidersOutlined />}
             onClick={() => setAiModalOpen(true)}
+            title="精调现有步骤，或从 URL 重新生成"
           >
-            AI 生成
+            AI 精调
           </Button>
           <Button
             icon={<EyeOutlined />}
@@ -366,16 +367,17 @@ export default function TestCaseEditor({ projectId, testCase }: Props) {
         />
       </div>
 
-      {/* AI Generate Modal */}
+      {/* AI 精调 Modal：预载入当前步骤，可直接精调或重新生成 */}
       <AIGenerateModal
         open={aiModalOpen}
         projectId={projectId}
         baseUrl={currentProject?.base_url ?? ''}
+        initialSteps={testCase.steps_json as any}
         onClose={(steps) => {
           setAiModalOpen(false);
           if (steps) {
             setJsonText(JSON.stringify(steps, null, 2));
-            message.success(`已生成 ${steps.length} 个步骤，可在编辑器中调整`);
+            message.success(`已应用 ${steps.length} 个步骤`);
           }
         }}
       />

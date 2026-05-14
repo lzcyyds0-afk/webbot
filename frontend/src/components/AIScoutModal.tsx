@@ -16,11 +16,12 @@ import {
 import {
   CompassOutlined,
   SaveOutlined,
-  CheckCircleOutlined,
+  EditOutlined,
+  CloseOutlined,
 } from '@ant-design/icons';
 import { useProjectsStore } from '../stores/projectsStore';
 import { scoutPage, type ScoutRequest } from '../api/scout';
-import type { ScoutResponse, ScoutPath } from '../types';
+import type { ScoutResponse, ScoutPath, StepDef } from '../types';
 import CookieExtractor from './CookieExtractor';
 
 const { Text, Paragraph } = Typography;
@@ -83,33 +84,39 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
     }
   };
 
-  const handleSaveAsTestCase = async (path: ScoutPath, index: number) => {
+  const handleCancel = () => {
+    onClose();
+    setTimeout(() => {
+      setResult(null);
+      setError(null);
+      setSavingIds(new Set());
+    }, 300);
+  };
+
+  // editedSteps: optional override from inline editor
+  const handleSaveAsTestCase = async (
+    path: ScoutPath,
+    index: number,
+    editedSteps?: StepDef[],
+  ) => {
     setSavingIds((prev) => new Set(prev).add(index));
     try {
+      const stepsToSave = editedSteps ?? path.steps;
       const tc = await createTestCase(projectId, { name: path.title });
-      await updateTestCaseSteps(projectId, tc.id, path.steps);
-      message.success(`已保存为用例: ${path.title}`);
+      await updateTestCaseSteps(projectId, tc.id, stepsToSave);
       await fetchTestCases(projectId);
       setCurrentTestCase(tc);
+      message.success(`已保存为用例: ${path.title}`);
+      // Auto-close so user lands directly in the test case editor
+      handleCancel();
     } catch (e: any) {
       message.error(e?.message || '保存失败');
-    } finally {
       setSavingIds((prev) => {
         const next = new Set(prev);
         next.delete(index);
         return next;
       });
     }
-  };
-
-  const handleCancel = () => {
-    onClose();
-    // Reset after animation
-    setTimeout(() => {
-      setResult(null);
-      setError(null);
-      setSavingIds(new Set());
-    }, 300);
   };
 
   return (
@@ -122,10 +129,13 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
       }
       open={open}
       onCancel={handleCancel}
-      width={720}
+      width={760}
       footer={
         result?.paths
           ? [
+              <Button key="back" onClick={() => setResult(null)}>
+                重新探索
+              </Button>,
               <Button key="close" onClick={handleCancel}>
                 关闭
               </Button>,
@@ -149,23 +159,19 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
     >
       {/* Input form */}
       {!result && (
-        <Form
-          form={form}
-          layout="vertical"
-          initialValues={{ url: baseUrl }}
-        >
+        <Form form={form} layout="vertical" initialValues={{ url: baseUrl }}>
           <Form.Item
             name="url"
             label="页面 URL"
-            rules={[{ required: true, message: '请输入 URL' }, { type: 'url', message: '请输入合法 URL' }]}
+            rules={[
+              { required: true, message: '请输入 URL' },
+              { type: 'url', message: '请输入合法 URL' },
+            ]}
           >
             <Input placeholder="https://app.example.com/page" />
           </Form.Item>
 
-          <Form.Item
-            name="goal"
-            label="探索目标（可选）"
-          >
+          <Form.Item name="goal" label="探索目标（可选）">
             <Input.TextArea
               rows={2}
               placeholder="例如：重点测试登录和表单提交，留空则全面探索"
@@ -177,9 +183,7 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
             showIcon
             message="如果目标页面需要登录，必须配置 Cookie，否则 AI 只能看到登录页"
             style={{ marginBottom: 12 }}
-            action={
-              <CookieExtractor />
-            }
+            action={<CookieExtractor />}
           />
 
           <Form.Item
@@ -218,20 +222,27 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
         <div style={{ textAlign: 'center', padding: '40px 0' }}>
           <Spin size="large" />
           <div style={{ marginTop: 16 }}>
-            <Text type="secondary">正在打开页面、截图、识别交互元素、调用 Vision LLM 生成测试建议...</Text>
+            <Text type="secondary">
+              正在打开页面、截图、识别交互元素、调用 Vision LLM 生成测试建议...
+            </Text>
           </div>
         </div>
       )}
 
       {/* Error */}
       {error && (
-        <Alert type="error" message="探索失败" description={error} style={{ marginBottom: 16 }} showIcon />
+        <Alert
+          type="error"
+          message="探索失败"
+          description={error}
+          style={{ marginBottom: 16 }}
+          showIcon
+        />
       )}
 
       {/* Result cards */}
       {result && (
         <div>
-          {/* Summary */}
           <Alert
             type="success"
             message={`识别到 ${result.elements_count} 个交互元素，生成 ${result.paths.length} 条测试建议${result.retry_used ? '（经过一次修正）' : ''}`}
@@ -239,21 +250,26 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
             showIcon
           />
 
-          {/* Page info */}
           <div style={{ marginBottom: 12 }}>
             <Text type="secondary" style={{ fontSize: 12 }}>
               页面: {result.page_title || result.url}
             </Text>
           </div>
 
-          {/* Path cards */}
+          <Alert
+            type="info"
+            showIcon
+            message='点击「保存为用例」后将自动跳转到编辑器，可在那里用「AI 精调」进一步修改步骤。'
+            style={{ marginBottom: 16 }}
+          />
+
           <Space direction="vertical" style={{ width: '100%' }} size="middle">
             {result.paths.map((path, idx) => (
               <PathCard
                 key={idx}
                 path={path}
                 index={idx}
-                onSave={() => handleSaveAsTestCase(path, idx)}
+                onSave={(editedSteps) => handleSaveAsTestCase(path, idx, editedSteps)}
                 saving={savingIds.has(idx)}
               />
             ))}
@@ -264,6 +280,8 @@ export default function AIScoutModal({ open, projectId, baseUrl, onClose }: Prop
   );
 }
 
+// ── PathCard ──
+
 function PathCard({
   path,
   index,
@@ -272,7 +290,7 @@ function PathCard({
 }: {
   path: ScoutPath;
   index: number;
-  onSave: () => void;
+  onSave: (editedSteps?: StepDef[]) => void;
   saving: boolean;
 }) {
   const riskColor = RISK_COLORS[path.risk_level] || '#52c41a';
@@ -282,16 +300,40 @@ function PathCard({
     .map((s) => s.action)
     .join(' → ');
 
+  // Inline JSON editing state
+  const [editingJson, setEditingJson] = useState<string | null>(null);
+  const [jsonError, setJsonError] = useState<string | null>(null);
+
+  const handleEditToggle = () => {
+    if (editingJson === null) {
+      setEditingJson(JSON.stringify(path.steps, null, 2));
+      setJsonError(null);
+    } else {
+      setEditingJson(null);
+      setJsonError(null);
+    }
+  };
+
+  const handleSaveEdited = () => {
+    try {
+      const parsed = JSON.parse(editingJson!);
+      if (!Array.isArray(parsed)) {
+        setJsonError('必须是 JSON 数组');
+        return;
+      }
+      onSave(parsed as StepDef[]);
+    } catch {
+      setJsonError('JSON 格式错误，请检查语法');
+    }
+  };
+
   return (
     <Card
       size="small"
-      style={{
-        borderLeft: `4px solid ${riskColor}`,
-        borderRadius: 6,
-      }}
+      style={{ borderLeft: `4px solid ${riskColor}`, borderRadius: 6 }}
       bodyStyle={{ padding: '12px 16px' }}
     >
-      {/* Header: title + risk + save */}
+      {/* Header */}
       <div
         style={{
           display: 'flex',
@@ -309,23 +351,29 @@ function PathCard({
               风险 {path.risk_level} ({riskLabel})
             </Tag>
           </Space>
-          <Paragraph
-            type="secondary"
-            style={{ fontSize: 12, margin: 0, marginTop: 4 }}
-          >
+          <Paragraph type="secondary" style={{ fontSize: 12, margin: 0, marginTop: 4 }}>
             {path.description}
           </Paragraph>
         </Space>
-        <Button
-          type="primary"
-          size="small"
-          icon={<SaveOutlined />}
-          loading={saving}
-          onClick={onSave}
-          style={{ marginLeft: 12, flexShrink: 0 }}
-        >
-          保存为用例
-        </Button>
+
+        <Space style={{ marginLeft: 12, flexShrink: 0 }}>
+          <Button
+            size="small"
+            icon={editingJson !== null ? <CloseOutlined /> : <EditOutlined />}
+            onClick={handleEditToggle}
+          >
+            {editingJson !== null ? '取消编辑' : '编辑步骤'}
+          </Button>
+          <Button
+            type="primary"
+            size="small"
+            icon={<SaveOutlined />}
+            loading={saving}
+            onClick={() => (editingJson !== null ? handleSaveEdited() : onSave())}
+          >
+            保存为用例
+          </Button>
+        </Space>
       </div>
 
       {/* Tags */}
@@ -339,40 +387,70 @@ function PathCard({
         </div>
       )}
 
-      {/* Steps summary */}
-      <Text type="secondary" style={{ fontSize: 11 }}>
-        步骤: {stepSummary}
-        {path.steps.length > 5 ? ` ... (+${path.steps.length - 5})` : ''}
-      </Text>
+      {/* Steps summary (shown when not editing) */}
+      {editingJson === null && (
+        <>
+          <Text type="secondary" style={{ fontSize: 11 }}>
+            步骤: {stepSummary}
+            {path.steps.length > 5 ? ` ... (+${path.steps.length - 5})` : ''}
+          </Text>
 
-      {/* Expandable full steps */}
-      <Collapse
-        ghost
-        size="small"
-        style={{ marginTop: 4 }}
-        items={[
-          {
-            key: 'steps',
-            label: <Text style={{ fontSize: 12 }}>查看完整步骤</Text>,
-            children: (
-              <pre
-                style={{
-                  background: '#1e1e1e',
-                  color: '#d4d4d4',
-                  padding: 10,
-                  borderRadius: 4,
-                  fontSize: 11,
-                  maxHeight: 240,
-                  overflow: 'auto',
-                  margin: 0,
-                }}
-              >
-                {JSON.stringify(path.steps, null, 2)}
-              </pre>
-            ),
-          },
-        ]}
-      />
+          <Collapse
+            ghost
+            size="small"
+            style={{ marginTop: 4 }}
+            items={[
+              {
+                key: 'steps',
+                label: <Text style={{ fontSize: 12 }}>查看完整步骤</Text>,
+                children: (
+                  <pre
+                    style={{
+                      background: '#1e1e1e',
+                      color: '#d4d4d4',
+                      padding: 10,
+                      borderRadius: 4,
+                      fontSize: 11,
+                      maxHeight: 240,
+                      overflow: 'auto',
+                      margin: 0,
+                    }}
+                  >
+                    {JSON.stringify(path.steps, null, 2)}
+                  </pre>
+                ),
+              },
+            ]}
+          />
+        </>
+      )}
+
+      {/* Inline JSON editor (shown when editing) */}
+      {editingJson !== null && (
+        <div style={{ marginTop: 8 }}>
+          {jsonError && (
+            <Alert type="error" message={jsonError} style={{ marginBottom: 8 }} showIcon />
+          )}
+          <Input.TextArea
+            value={editingJson}
+            onChange={(e) => {
+              setEditingJson(e.target.value);
+              setJsonError(null);
+            }}
+            rows={10}
+            style={{
+              fontFamily: 'monospace',
+              fontSize: 12,
+              background: '#1e1e1e',
+              color: '#d4d4d4',
+              borderColor: '#444',
+            }}
+          />
+          <Text type="secondary" style={{ fontSize: 11, display: 'block', marginTop: 4 }}>
+            编辑完成后点击「保存为用例」，保存后可在编辑器中继续精调
+          </Text>
+        </div>
+      )}
     </Card>
   );
 }
