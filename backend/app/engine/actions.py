@@ -6,6 +6,7 @@ from playwright.async_api import Page, TimeoutError as PwTimeout
 
 from app.engine.models import StepContext, StepResult
 from app.engine.drag_and_connect import do_drag, do_connect
+from app.engine.auth import do_login
 from app.engine.self_heal import SelfHealEngine
 from app.models.run_step import StepStatus
 
@@ -22,6 +23,7 @@ class ActionExecutor:
             "screenshot": self._screenshot,
             "drag": self._drag,
             "connect": self._connect,
+            "login": self._login,
         }
         self._heal_engine = heal_engine
 
@@ -229,6 +231,10 @@ class ActionExecutor:
     # ── connect ──
     async def _connect(self, page: Page, ctx: StepContext) -> StepResult:
         return await do_connect(page, ctx)
+
+    # ── login ──
+    async def _login(self, page: Page, ctx: StepContext) -> StepResult:
+        return await do_login(page, ctx)
 
 
 # ── Helpers ──

@@ -31,6 +31,12 @@ def _migrate_test_cases_table(connection):
     cols = [c["name"] for c in inspector.get_columns("test_cases")]
     if "cookies_json" not in cols:
         connection.execute(text("ALTER TABLE test_cases ADD COLUMN cookies_json JSON"))
+    if "auth_json" not in cols:
+        connection.execute(text("ALTER TABLE test_cases ADD COLUMN auth_json JSON"))
+    if "self_heal" not in cols:
+        connection.execute(text(
+            "ALTER TABLE test_cases ADD COLUMN self_heal VARCHAR(16) NOT NULL DEFAULT 'on'"
+        ))
 
 # Prevent any HTTP library from using the system ALL_PROXY (SOCKS) which
 # breaks LLM API calls in this environment.

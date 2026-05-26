@@ -45,8 +45,12 @@ _ACTION_SCHEMA: dict[str, set[str]] = {
     "input": {"selector", "text"},
     "wait": set(),       # ms or selector, at least one
     "screenshot": set(),  # no required fields
-    "drag": {"from_selector"},
-    "connect": {"from_port_selector", "to_port_selector"},
+    # drag: from_selector OR from_point; to_selector OR to_point.
+    # Optional: offset {dx,dy}, steps, hold_ms, mode ("mouse"|"html5"), scroll.
+    "drag": set(),
+    "connect": {"from_port_selector"},  # to_port_selector OR to_point
+    # login: requires username + password; optional url, selectors, success_url_pattern, success_selector.
+    "login": {"username", "password"},
 }
 
 
@@ -540,3 +544,24 @@ def _validate_steps(steps: list[dict]) -> None:
             raise ValidationError(
                 f"Step {i} (wait): needs at least 'ms' or 'selector'"
             )
+
+        # Special: drag needs source AND target
+        if action == "drag":
+            has_src = ("from_selector" in step) or ("from_point" in step)
+            has_dst = ("to_selector" in step) or ("to_point" in step)
+            if not has_src:
+                raise ValidationError(
+                    f"Step {i} (drag): needs 'from_selector' or 'from_point'"
+                )
+            if not has_dst:
+                raise ValidationError(
+                    f"Step {i} (drag): needs 'to_selector' or 'to_point'"
+                )
+
+        # Special: connect needs source port AND (target port or point)
+        if action == "connect":
+            has_dst = ("to_port_selector" in step) or ("to_point" in step)
+            if not has_dst:
+                raise ValidationError(
+                    f"Step {i} (connect): needs 'to_port_selector' or 'to_point'"
+                )

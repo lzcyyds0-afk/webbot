@@ -25,6 +25,7 @@ class TestCaseUpdate(BaseModel):
     name: str | None = None
     steps_json: list[dict] | None = None
     cookies_json: list[dict] | None = None
+    auth_json: dict | None = None
 
 
 class TestCaseOut(BaseModel):
@@ -33,6 +34,7 @@ class TestCaseOut(BaseModel):
     name: str
     steps_json: list[dict]
     cookies_json: list[dict] | None = None
+    auth_json: dict | None = None
     created_at: datetime | None = None
     updated_at: datetime | None = None
 
@@ -100,6 +102,15 @@ async def update_test_case(
         tc.steps_json = body.steps_json
     if body.cookies_json is not None:
         tc.cookies_json = body.cookies_json
+    if body.auth_json is not None:
+        # Encrypt credential password before persisting (if present)
+        from app.core.security import encrypt_value
+
+        auth = dict(body.auth_json)
+        creds = auth.get("credentials")
+        if isinstance(creds, dict) and creds.get("password"):
+            creds["password_encrypted"] = encrypt_value(creds.pop("password"))
+        tc.auth_json = auth
     await db.flush()
     await db.refresh(tc)
     return tc

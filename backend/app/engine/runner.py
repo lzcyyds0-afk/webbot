@@ -12,6 +12,10 @@ from app.engine.ws_broadcaster import WsBroadcaster, NullBroadcaster
 from app.engine.models import StepContext, WsMessage
 from app.engine.step_capturer import StepCapturer, persist_step_details
 from app.engine.self_heal import SelfHealEngine, record_heal_event
+from app.engine.auth import (
+    is_likely_login_page,
+    inject_storage_state,
+)
 
 from app.models.test_case import TestCase
 from app.models.run import Run, RunStatus
@@ -62,9 +66,44 @@ class Runner:
             page = await bm.new_page(cookies=cookies)
             await self._capturer.setup(page)
 
+            # ── Storage state injection (localStorage / sessionStorage) ──
+            auth = case.auth_json or {}
+            local_storage = auth.get("local_storage") if isinstance(auth, dict) else None
+            session_storage = auth.get("session_storage") if isinstance(auth, dict) else None
+            # localStorage is per-origin, requires a page to exist. We inject lazily
+            # via init_script so the first navigation picks it up.
+            if local_storage or session_storage:
+                try:
+                    payload_js = (
+                        "() => { "
+                        f"const local = {_safe_json(local_storage or {})};"
+                        f"const session = {_safe_json(session_storage or {})};"
+                        "for (const [k,v] of Object.entries(local)) { try { window.localStorage.setItem(k,v); } catch(e){} }"
+                        "for (const [k,v] of Object.entries(session)) { try { window.sessionStorage.setItem(k,v); } catch(e){} }"
+                        "}"
+                    )
+                    await page.add_init_script(f"({payload_js})()")
+                except Exception:
+                    logger.warning("Failed to register storage init_script for run=%s", run.id)
+
+            # ── Track whether we've checked cookie validity yet ──
+            cookie_check_done = False
+
+            # Pre-decrypt stored credentials (if any) for use by login steps
+            stored_creds = _decrypt_stored_credentials(auth.get("credentials") if isinstance(auth, dict) else None)
+
             for i, step_def in enumerate(case.steps_json):
                 action = step_def.get("action", "")
                 params = {k: v for k, v in step_def.items() if k != "action"}
+
+                # If login step references stored credentials (no inline username/password),
+                # inject them from auth_json.credentials.
+                if action == "login" and stored_creds:
+                    for key in ("url", "username", "password", "username_selector",
+                                "password_selector", "submit_selector", "success_url_pattern"):
+                        if key not in params and stored_creds.get(key):
+                            params[key] = stored_creds[key]
+
                 ctx = StepContext(
                     run_id=run.id,
                     step_index=i,
@@ -106,6 +145,30 @@ class Runner:
 
                 # ── execute action ──
                 result = await self._executor.execute(page, ctx)
+
+                # ── Cookie validity check: after the first goto, detect login redirect ──
+                if action == "goto" and not cookie_check_done and result.status == StepStatus.passed:
+                    cookie_check_done = True
+                    try:
+                        login_info = await is_likely_login_page(page)
+                        if login_info["is_login"] and cookies:
+                            # Cookies were provided but we landed on a login page → cookies likely expired
+                            await self._broadcaster.emit(WsMessage(
+                                event="cookie_invalid",
+                                run_id=run.id,
+                                step_index=i,
+                                status="warning",
+                                action=action,
+                                params_summary=login_info["reason"],
+                                screenshot_before=before_url,
+                            ))
+                            logger.warning(
+                                "Cookies appear invalid for run=%s: %s",
+                                run.id,
+                                login_info["reason"],
+                            )
+                    except Exception:
+                        logger.debug("cookie validity check failed", exc_info=True)
 
                 # ── if healed, record event and notify ──
                 output = result.output_json or {}
@@ -227,6 +290,27 @@ class Runner:
         ))
 
         return run
+
+
+def _safe_json(obj: dict) -> str:
+    """JSON-encode a dict safely for embedding inside a JS template string."""
+    import json
+    return json.dumps(obj, ensure_ascii=False)
+
+
+def _decrypt_stored_credentials(creds: dict | None) -> dict | None:
+    """Return a copy of creds with password_encrypted decrypted to 'password'."""
+    if not creds or not isinstance(creds, dict):
+        return None
+    out = dict(creds)
+    enc = out.pop("password_encrypted", None)
+    if enc:
+        try:
+            from app.core.security import decrypt_value
+            out["password"] = decrypt_value(enc)
+        except Exception:
+            logger.warning("Failed to decrypt stored password; login will likely fail")
+    return out
 
 
 def _params_summary(params: dict) -> str:

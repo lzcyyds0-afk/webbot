@@ -24,8 +24,38 @@ const ACTION_TEMPLATES: Record<string, StepDef> = {
   input: { action: 'input', selector: '', text: '' },
   wait: { action: 'wait', ms: 1000 },
   screenshot: { action: 'screenshot', full_page: false },
-  drag: { action: 'drag', from_selector: '', to_point: { x: 600, y: 400 } },
-  connect: { action: 'connect', from_port_selector: '', to_port_selector: '' },
+  drag: {
+    action: 'drag',
+    from_selector: '',
+    to_point: { x: 600, y: 400 },
+    steps: 20,
+    hold_ms: 0,
+    mode: 'mouse', // 'mouse' | 'html5'
+    scroll: true,
+  } as StepDef,
+  'drag (html5)': {
+    action: 'drag',
+    from_selector: '',
+    to_selector: '',
+    mode: 'html5',
+  } as StepDef,
+  connect: {
+    action: 'connect',
+    from_port_selector: '',
+    to_port_selector: '',
+    steps: 20,
+    vlm_screenshot: true,
+  } as StepDef,
+  login: {
+    action: 'login',
+    url: '/login',
+    username: '',
+    password: '',
+    username_selector: '',
+    password_selector: '',
+    submit_selector: '',
+    success_url_pattern: '',
+  } as StepDef,
 };
 
 const COOKIE_TEMPLATE = `[

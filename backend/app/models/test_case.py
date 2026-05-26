@@ -14,6 +14,17 @@ class TestCase(TimestampMixin, Base):
     name: Mapped[str] = mapped_column(String(256), nullable=False)
     steps_json: Mapped[dict] = mapped_column(JSON, nullable=False, default=list)
     cookies_json: Mapped[list[dict] | None] = mapped_column(JSON, nullable=True)
+    # Optional auth bundle:
+    # {
+    #   "local_storage": {key: value, ...},     # localStorage entries
+    #   "session_storage": {key: value, ...},   # sessionStorage entries
+    #   "credentials": {                        # encrypted username/password fallback
+    #     "url": "...", "username": "...", "password_encrypted": "...",
+    #     "username_selector": "...", "password_selector": "...",
+    #     "submit_selector": "...", "success_url_pattern": "..."
+    #   }
+    # }
+    auth_json: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     self_heal: Mapped[str] = mapped_column(String(16), nullable=False, default="on")
 
     # relationships

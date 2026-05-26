@@ -33,6 +33,19 @@ export interface TestCase {
     secure?: boolean;
     sameSite?: 'Strict' | 'Lax' | 'None';
   }> | null;
+  auth_json?: {
+    local_storage?: Record<string, string>;
+    session_storage?: Record<string, string>;
+    credentials?: {
+      url?: string;
+      username?: string;
+      password_encrypted?: string;
+      username_selector?: string;
+      password_selector?: string;
+      submit_selector?: string;
+      success_url_pattern?: string;
+    };
+  } | null;
   created_at: string;
   updated_at: string;
 }
