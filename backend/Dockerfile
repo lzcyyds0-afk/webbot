@@ -20,8 +20,14 @@ RUN uv run playwright install --with-deps chromium
 
 COPY . .
 
-# Run as a non-root user; give it ownership of the app and browser cache.
-RUN useradd --create-home --uid 1000 appuser \
+# Make `app` importable for alembic's env.py (and uvicorn).
+ENV PYTHONPATH=/app
+
+# Run as a non-root user. Pre-create the runtime dirs so the named volumes
+# mounted over them inherit appuser ownership (else they'd be root-owned and
+# the non-root process couldn't write the SQLite DB / screenshots).
+RUN mkdir -p /app/data /app/storage/screenshots /app/storage/exports \
+    && useradd --create-home --uid 1000 appuser \
     && chown -R appuser:appuser /app /ms-playwright
 USER appuser
 

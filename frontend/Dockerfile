@@ -1,5 +1,6 @@
 # ── Build stage ──
-FROM node:20-slim AS build
+# Node 22+: pnpm 11 relies on builtins not present in Node 20.
+FROM node:22-slim AS build
 
 WORKDIR /app
 RUN npm install -g pnpm@11
