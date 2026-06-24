@@ -18,7 +18,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from playwright.async_api import Page, TimeoutError as PwTimeout
+from playwright.async_api import Page
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -69,10 +69,13 @@ class SelfHealEngine:
                 logger.info("LLM heal success: %s → %s", original_selector, healed)
                 return HealResult(healed_selector=healed, method="llm", llm_cost=cost)
 
-        # Layer c: vision (TODO)
-        # healed = await self._vision_heal(page, original_selector, ctx)
-        # if healed:
-        #     return HealResult(healed_selector=healed, method="vision")
+        # Layer c: vision — DOM-blind fallback that locates the element on a
+        # screenshot when rule + DOM-semantic layers can't recover it.
+        if self._db is not None:
+            healed, cost = await self._vision_heal(page, original_selector, ctx)
+            if healed:
+                logger.info("Vision heal success: %s → %s", original_selector, healed)
+                return HealResult(healed_selector=healed, method="vision", llm_cost=cost)
 
         logger.info("Self-heal failed for selector: %s", original_selector)
         return None
@@ -154,9 +157,50 @@ class SelfHealEngine:
 
     async def _vision_heal(
         self, page: Page, original_selector: str, ctx: StepContext
-    ) -> str | None:
-        """TODO: use VLM to locate the element visually."""
-        return None
+    ) -> tuple[str | None, float | None]:
+        """Locate the target element visually when DOM-based heal fails.
+
+        Flow: screenshot → VLM returns the element's center pixel → map the
+        point back to a live DOM node via document.elementFromPoint → build a
+        robust selector for it. Returns (selector, cost) or (None, None).
+        """
+        if self._db is None:
+            return None, None
+
+        try:
+            config = await _load_default_llm_config(self._db)
+            provider = get_provider(config)
+        except Exception as exc:
+            logger.warning("Vision heal skipped: no default config. %s", exc)
+            return None, None
+
+        # Viewport screenshot (deviceScaleFactor=1 → screenshot px == CSS px,
+        # so coordinates line up with document.elementFromPoint).
+        try:
+            png = await page.screenshot()
+        except Exception as exc:
+            logger.warning("Vision heal screenshot failed: %s", exc)
+            return None, None
+        img_b64 = base64.b64encode(png).decode()
+
+        messages = [Message(role="user", content=_build_vision_heal_prompt(original_selector, ctx))]
+        images = [ImageRef(type="base64", data=img_b64, media_type="image/png")]
+        try:
+            chat_result = await provider.vision(
+                messages=messages, images=images, temperature=0.0, max_tokens=300
+            )
+        except Exception as exc:
+            logger.warning("Vision heal call failed: %s", exc)
+            return None, None
+
+        coords = _parse_vision_coords(chat_result.content)
+        if coords is None:
+            return None, None
+
+        healed = await _selector_at_point(page, coords[0], coords[1])
+        if healed and await _selector_works(page, healed):
+            return healed, _estimate_cost(chat_result.usage)
+        return None, None
 
 
 # ── Helpers ──
@@ -168,7 +212,7 @@ async def _selector_works(page: Page, selector: str, timeout_ms: int = 3000) -> 
         if count == 0:
             return False
         return await page.locator(selector).first.is_visible(timeout=timeout_ms)
-    except (PwTimeout, Exception):
+    except Exception:
         return False
 
 
@@ -357,6 +401,77 @@ def _extract_selector_from_llm_response(text: str) -> str | None:
     except (json.JSONDecodeError, ValueError):
         pass
     return None
+
+
+def _build_vision_heal_prompt(original_selector: str, ctx: StepContext) -> str:
+    """Prompt the VLM to return the center pixel of the intended element."""
+    lines = [
+        "You are a web automation visual assistant. A CSS selector no longer "
+        "locates its target element. Look at the screenshot and find the element "
+        "the automation was trying to interact with.",
+        "",
+        f"Broken selector: `{original_selector}`",
+        f"Intended action: {ctx.action}",
+    ]
+    text = ctx.params.get("text")
+    if text:
+        lines.append(f"Text the action would enter: {text!r}")
+    lines += [
+        "",
+        "Respond with ONLY a JSON object giving the element's CENTER point in "
+        "screenshot pixels measured from the top-left corner:",
+        '{"found": true, "x": <int>, "y": <int>}',
+        'If you cannot confidently locate it, return {"found": false}.',
+    ]
+    return "\n".join(lines)
+
+
+def _parse_vision_coords(text: str) -> tuple[int, int] | None:
+    """Extract (x, y) from the VLM's JSON response, or None if not found."""
+    text = text.strip()
+    fence = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL)
+    if fence:
+        text = fence.group(1).strip()
+    match = re.search(r"\{.*\}", text, re.DOTALL)
+    if not match:
+        return None
+    try:
+        data = json.loads(match.group())
+    except (json.JSONDecodeError, ValueError):
+        return None
+    if not data.get("found"):
+        return None
+    try:
+        return int(data["x"]), int(data["y"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+async def _selector_at_point(page: Page, x: int, y: int) -> str | None:
+    """Map a screenshot pixel to a live DOM node and build a selector for it."""
+    try:
+        return await page.evaluate(
+            """([x, y]) => {
+                const el = document.elementFromPoint(x, y);
+                if (!el) return null;
+                const esc = (s) => (window.CSS && CSS.escape) ? CSS.escape(s) : s;
+                if (el.id) return '#' + esc(el.id);
+                if (el.getAttribute('data-testid'))
+                    return `[data-testid="${el.getAttribute('data-testid')}"]`;
+                if (el.getAttribute('aria-label'))
+                    return `${el.tagName.toLowerCase()}[aria-label="${el.getAttribute('aria-label')}"]`;
+                const text = (el.textContent || '').trim().slice(0, 30);
+                if (text)
+                    return `${el.tagName.toLowerCase()}:has-text("${text.replace(/"/g, '\\"')}")`;
+                const cls = (typeof el.className === 'string' && el.className.trim())
+                    ? '.' + el.className.trim().split(/\\s+/).slice(0, 2).join('.') : '';
+                return el.tagName.toLowerCase() + cls;
+            }""",
+            [x, y],
+        )
+    except Exception as exc:
+        logger.debug("elementFromPoint mapping failed at (%s,%s): %s", x, y, exc)
+        return None
 
 
 def _estimate_cost(usage) -> float | None:

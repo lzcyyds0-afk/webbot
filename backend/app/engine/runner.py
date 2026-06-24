@@ -1,11 +1,13 @@
 from __future__ import annotations
 import logging
+import time
 from datetime import datetime, timezone
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.engine.browser import BrowserManager
+from app.core.config import settings
+from app.engine.browser import get_shared_browser
 from app.engine.actions import ActionExecutor
 from app.engine.storage import Storage
 from app.engine.ws_broadcaster import WsBroadcaster, NullBroadcaster
@@ -51,18 +53,31 @@ class Runner:
         self._db.add(run)
         await self._db.flush()
 
-        bm = BrowserManager()  # uses settings.headless
         page = None
         run_failed = False
 
         try:
-            await bm.start()
+            # Reuse the shared browser; this run gets its own isolated context.
+            bm = await get_shared_browser()
             # Pass cookies from test case if available
             cookies = case.cookies_json if case.cookies_json else None
             page = await bm.new_page(cookies=cookies)
             await self._capturer.setup(page)
 
+            # Cap total wall-clock time: every action already has its own
+            # timeout, so we just stop launching new steps once the run budget
+            # is exhausted, preventing a runaway test from holding the browser.
+            run_started = time.monotonic()
+
             for i, step_def in enumerate(case.steps_json):
+                if time.monotonic() - run_started > settings.run_timeout_seconds:
+                    logger.warning(
+                        "Run %s exceeded time budget of %ss; stopping",
+                        run.id, settings.run_timeout_seconds,
+                    )
+                    run_failed = True
+                    break
+
                 action = step_def.get("action", "")
                 params = {k: v for k, v in step_def.items() if k != "action"}
                 ctx = StepContext(
@@ -139,10 +154,13 @@ class Runner:
                 capture_data = self._capturer.get_data()
 
                 # ── after screenshot ──
+                # A dedicated `screenshot` step honors its `full_page` param;
+                # the implicit per-step capture stays viewport-only.
+                after_full_page = action == "screenshot" and bool(params.get("full_page"))
                 after_path = self._storage.screenshot_path(run.id, i, suffix="_after")
                 after_url: str | None = None
                 try:
-                    await self._storage.save_screenshot(page, after_path)
+                    await self._storage.save_screenshot(page, after_path, full_page=after_full_page)
                     after_url = f"/screenshots/{run.id}/{i}_after.png"
                     result.screenshot_path = after_url
                 except Exception:
@@ -208,10 +226,12 @@ class Runner:
                 await self._capturer.teardown()
             except Exception:
                 pass
-            try:
-                await bm.close()
-            except Exception:
-                logger.warning("Browser close failed for run=%s", run.id)
+            # Close only this run's context; the browser is shared and stays up.
+            if page is not None:
+                try:
+                    await page.context.close()
+                except Exception:
+                    logger.warning("Context close failed for run=%s", run.id)
 
         # ── finalize run ──
         run.status = RunStatus.failed if run_failed else RunStatus.passed

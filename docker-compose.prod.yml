@@ -1,0 +1,46 @@
+# Production stack: built images, no source mounts, no --reload.
+# Usage: docker compose -f docker-compose.prod.yml up --build -d
+#
+# Secrets (SECRET_KEY, FERNET_KEY, ...) are read from a root .env file that is
+# NEVER baked into images (see each service's .dockerignore).
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./data/webbot.db
+      - REDIS_URL=redis://redis:6379/0
+      - DEBUG=false
+    volumes:
+      - backend-data:/app/data
+      - backend-storage:/app/storage
+    depends_on:
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+volumes:
+  backend-data:
+  backend-storage:
+  redis-data:

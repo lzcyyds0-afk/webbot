@@ -66,7 +66,9 @@ async def assert_visual(
     }
 
     try:
-        async with httpx.AsyncClient(timeout=timeout, proxy=None) as client:
+        # trust_env=False: ignore system proxy env vars for this outbound call
+        # (see app/llm/retry.py for rationale).
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:
             resp = await client.post(vlm_endpoint, json=payload, headers=headers)
             resp.raise_for_status()
             data = resp.json()

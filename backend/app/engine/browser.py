@@ -1,4 +1,5 @@
 from __future__ import annotations
+import asyncio
 from playwright.async_api import async_playwright, Browser, Page, Playwright
 from app.core.config import settings
 
@@ -51,8 +52,45 @@ class BrowserManager:
         self._browser = None
         self._playwright = None
 
+    def is_alive(self) -> bool:
+        return self._browser is not None and self._browser.is_connected()
+
     @property
     def browser(self) -> Browser:
         if self._browser is None:
             raise RuntimeError("Browser not started.")
         return self._browser
+
+
+# ── Process-wide shared browser ──
+#
+# Launching a Chromium process per run is the dominant per-run cost. Instead we
+# keep one browser alive for the whole process and give each run its own browser
+# *context* (cookies/storage stay isolated). The launch is lazy and guarded by a
+# lock so concurrent first-runs don't race to launch twice.
+
+_shared: BrowserManager | None = None
+_shared_lock = asyncio.Lock()
+
+
+async def get_shared_browser() -> BrowserManager:
+    """Return the shared, started BrowserManager, launching (or relaunching a
+    crashed one) on demand."""
+    global _shared
+    if _shared is not None and _shared.is_alive():
+        return _shared
+    async with _shared_lock:
+        # Re-check inside the lock: another coroutine may have launched it.
+        if _shared is None or not _shared.is_alive():
+            mgr = BrowserManager()
+            await mgr.start()
+            _shared = mgr
+    return _shared
+
+
+async def shutdown_shared_browser() -> None:
+    """Close the shared browser on application shutdown."""
+    global _shared
+    if _shared is not None:
+        await _shared.close()
+        _shared = None

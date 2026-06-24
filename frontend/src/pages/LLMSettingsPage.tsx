@@ -14,9 +14,7 @@ import {
   EditOutlined,
   DeleteOutlined,
   ThunderboltOutlined,
-  ArrowLeftOutlined,
 } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
 import { useLLMStore } from '../stores/llmStore';
 import LLMConfigModal from '../components/LLMConfigModal';
 import LLMTestModal from '../components/LLMTestModal';
@@ -32,7 +30,6 @@ const PROVIDER_COLOR: Record<string, string> = {
 };
 
 export default function LLMSettingsPage() {
-  const navigate = useNavigate();
   const configs = useLLMStore((s) => s.configs);
   const loading = useLLMStore((s) => s.loading);
   const fetchConfigs = useLLMStore((s) => s.fetchConfigs);
@@ -149,12 +146,7 @@ export default function LLMSettingsPage() {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <Button icon={<ArrowLeftOutlined />} onClick={() => navigate(-1)}>
-            返回
-          </Button>
-          <Title level={3} style={{ margin: 0 }}>LLM 配置</Title>
-        </div>
+        <Title level={3} style={{ margin: 0 }}>LLM 配置</Title>
         <Button type="primary" icon={<PlusOutlined />} onClick={handleCreate}>
           新增配置
         </Button>

@@ -1,4 +1,3 @@
-import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -7,7 +6,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.core.config import settings
-from app.core.database import engine, Base
 from app.api.v1.router import v1_router
 from app.ws.socketio_server import sio
 
@@ -15,52 +13,28 @@ from app.ws.socketio_server import sio
 import app.models  # noqa: F401
 
 
-def _migrate_runs_table(connection):
-    from sqlalchemy import inspect, text
-    inspector = inspect(connection)
-    cols = [c["name"] for c in inspector.get_columns("runs")]
-    if "narrative" not in cols:
-        connection.execute(text("ALTER TABLE runs ADD COLUMN narrative TEXT"))
-    if "narrative_generated_at" not in cols:
-        connection.execute(text("ALTER TABLE runs ADD COLUMN narrative_generated_at DATETIME"))
-
-
-def _migrate_test_cases_table(connection):
-    from sqlalchemy import inspect, text
-    inspector = inspect(connection)
-    cols = [c["name"] for c in inspector.get_columns("test_cases")]
-    if "cookies_json" not in cols:
-        connection.execute(text("ALTER TABLE test_cases ADD COLUMN cookies_json JSON"))
-
-# Prevent any HTTP library from using the system ALL_PROXY (SOCKS) which
-# breaks LLM API calls in this environment.
-for _proxy_var in ("ALL_PROXY", "all_proxy", "HTTP_PROXY", "http_proxy", "HTTPS_PROXY", "https_proxy"):
-    os.environ.pop(_proxy_var, None)
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Ensure data dir exists
+    # Ensure runtime directories exist. Schema is managed by Alembic —
+    # run `alembic upgrade head` before starting the server.
     Path("data").mkdir(exist_ok=True)
     Path("storage/screenshots").mkdir(parents=True, exist_ok=True)
     Path("storage/exports").mkdir(parents=True, exist_ok=True)
 
-    # Create all tables (dev mode — use alembic in production)
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-        await conn.run_sync(_migrate_runs_table)
-        await conn.run_sync(_migrate_test_cases_table)
-
     yield
+
+    # Shut down the shared browser (if one was ever launched).
+    from app.engine.browser import shutdown_shared_browser
+    await shutdown_shared_browser()
 
 
 app = FastAPI(title=settings.app_name, lifespan=lifespan)
 
-# CORS — allow frontend dev server
+# CORS — restrict to configured frontend origins (see settings.cors_origins)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=settings.cors_origins_list,
+    allow_credentials=settings.cors_allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )

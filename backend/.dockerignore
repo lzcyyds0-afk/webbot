@@ -1,0 +1,14 @@
+.venv
+__pycache__
+*.pyc
+.git
+node_modules
+data
+storage
+*.db
+# Never bake secrets into the image — provide them at runtime via env.
+.env
+*.env
+.env.*
+!.env.example
+tests

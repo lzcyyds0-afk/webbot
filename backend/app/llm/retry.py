@@ -27,7 +27,12 @@ async def request_with_retry(
 
     for attempt in range(max_retries + 1):
         try:
-            async with httpx.AsyncClient(timeout=timeout, proxy=None) as client:
+            # trust_env=False makes this client ignore the process/system proxy
+            # env vars (ALL_PROXY/HTTP_PROXY/...), which would otherwise route
+            # LLM API calls through a (often SOCKS) proxy and break them.
+            # This isolates proxy behaviour to LLM calls without mutating the
+            # global environment for the rest of the app (e.g. Playwright).
+            async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:
                 resp = await client.request(
                     method,
                     url,

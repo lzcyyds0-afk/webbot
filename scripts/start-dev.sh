@@ -12,6 +12,8 @@ echo "========================================"
 # Start backend in background
 echo "Starting backend..."
 cd "$BACKEND_DIR"
+echo "Applying database migrations..."
+PYTHONPATH="$BACKEND_DIR" uv run alembic upgrade head
 PYTHONPATH="$BACKEND_DIR" uv run uvicorn app.main:app --reload --port 8000 &
 BACKEND_PID=$!
 

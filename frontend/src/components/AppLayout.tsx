@@ -2,7 +2,6 @@ import { Layout, Menu } from 'antd';
 import {
   ProjectOutlined,
   SettingOutlined,
-  RobotOutlined,
 } from '@ant-design/icons';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
@@ -12,24 +11,12 @@ const menuItems = [
   {
     key: '/projects',
     icon: <ProjectOutlined />,
-    label: '项目',
+    label: '项目管理',
   },
   {
     key: '/settings/llm',
-    icon: <RobotOutlined />,
-    label: 'LLM 配置',
-  },
-  {
-    key: '/settings',
     icon: <SettingOutlined />,
-    label: '设置',
-    children: [
-      {
-        key: '/settings/llm',
-        icon: <RobotOutlined />,
-        label: 'LLM 配置',
-      },
-    ],
+    label: 'LLM 配置',
   },
 ];
 
@@ -37,7 +24,6 @@ export default function AppLayout() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Determine selected key from pathname
   const selectedKey = location.pathname.startsWith('/settings')
     ? '/settings/llm'
     : '/projects';
@@ -62,7 +48,6 @@ export default function AppLayout() {
         <Menu
           mode="inline"
           selectedKeys={[selectedKey]}
-          defaultOpenKeys={['/settings']}
           items={menuItems}
           onClick={({ key }) => navigate(key)}
         />

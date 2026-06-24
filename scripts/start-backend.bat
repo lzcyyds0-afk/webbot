@@ -36,7 +36,11 @@ if %ERRORLEVEL% NEQ 0 (
 echo [3/3] Running database migrations...
 uv run alembic upgrade head
 if %ERRORLEVEL% NEQ 0 (
-    echo [WARNING] Migration failed. Tables will be auto-created on startup.
+    echo [ERROR] Migration failed. The database schema is managed by Alembic;
+    echo         fix the migration error above before starting the server.
+    echo         If you have an old auto-created DB, see README "Alembic migration failed".
+    pause
+    exit /b 1
 )
 
 echo.

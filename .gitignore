@@ -32,3 +32,6 @@ playwright-report/
 # Build
 *.whl
 *.tar.gz
+
+# Claude transient worktrees
+.claude/worktrees/

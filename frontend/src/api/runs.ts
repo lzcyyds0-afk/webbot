@@ -23,7 +23,10 @@ export const fetchStepDetails = (runId: number, stepIndex: number) =>
   client.get<StepDetails>(`/runs/${runId}/steps/${stepIndex}/details`).then((r) => r.data);
 
 export const fetchStepDiagnosis = (runId: number, stepIndex: number) =>
-  client.get<StepDiagnosis>(`/runs/${runId}/steps/${stepIndex}/diagnosis`).then((r) => r.data);
+  // A 404 here just means "no diagnosis yet" — a normal state, so don't toast.
+  client
+    .get<StepDiagnosis>(`/runs/${runId}/steps/${stepIndex}/diagnosis`, { skipErrorToast: true })
+    .then((r) => r.data);
 
 export const runAiDiagnosis = (runId: number, stepIndex: number, llmConfigId?: number) =>
   client.post<StepDiagnosis>(`/runs/${runId}/steps/${stepIndex}/ai-diagnose`, { llm_config_id: llmConfigId }).then((r) => r.data);

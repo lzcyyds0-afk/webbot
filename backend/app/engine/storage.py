@@ -16,7 +16,7 @@ class Storage:
         return dir_path / filename
 
     async def save_screenshot(
-        self, page: Page, path: Path
+        self, page: Page, path: Path, full_page: bool = False
     ) -> str:
-        await page.screenshot(path=str(path), full_page=False)
+        await page.screenshot(path=str(path), full_page=full_page)
         return str(path)

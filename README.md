@@ -98,7 +98,7 @@ pnpm dev
 | Playwright 启动失败 / Chrome 找不到 | 安装 Google Chrome，或让 Playwright 自动下载 Chromium |
 | 端口被占用 | 检查是否有其他程序占用了 8000 或 5173 端口 |
 | 前端报错 502 | 后端服务未启动，先启动后端再刷新前端 |
-| Alembic 迁移失败 | 删除 `backend/data/webbot.db` 后重新运行迁移 |
+| Alembic 迁移失败 | 数据库 schema 由 Alembic 管理（不再启动时自动建表）。全新环境直接 `uv run alembic upgrade head`。旧的「自动建表」库没有迁移版本记录，若 schema 已完整可执行 `uv run alembic stamp head`，否则删除 `backend/data/webbot.db` 后重新 `alembic upgrade head` |
 
 ## Cookie 配置（登录态支持）
 

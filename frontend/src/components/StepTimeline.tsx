@@ -58,6 +58,14 @@ export default function StepTimeline({ steps, activeIndex, onSelect }: Props) {
 
   return (
     <div ref={containerRef} style={{ padding: 12, overflowY: 'auto', height: '100%' }}>
+      <style>{`
+        .step-card-running { animation: stepPulse 2s infinite; }
+        @keyframes stepPulse {
+          0% { box-shadow: 0 0 0 0 rgba(22, 119, 255, 0.4); }
+          70% { box-shadow: 0 0 0 6px rgba(22, 119, 255, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(22, 119, 255, 0); }
+        }
+      `}</style>
       <Text strong style={{ fontSize: 14, display: 'block', marginBottom: 12 }}>
         步骤时间线
       </Text>
@@ -87,20 +95,6 @@ export default function StepTimeline({ steps, activeIndex, onSelect }: Props) {
               }}
               className={isRunning ? 'step-card-running' : ''}
             >
-              {/* Running pulse animation */}
-              {isRunning && (
-                <style>{`
-                  .step-card-running {
-                    animation: stepPulse 2s infinite;
-                  }
-                  @keyframes stepPulse {
-                    0% { box-shadow: 0 0 0 0 rgba(22, 119, 255, 0.4); }
-                    70% { box-shadow: 0 0 0 6px rgba(22, 119, 255, 0); }
-                    100% { box-shadow: 0 0 0 0 rgba(22, 119, 255, 0); }
-                  }
-                `}</style>
-              )}
-
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                 {cfg.icon}
                 <Text strong style={{ fontSize: 13, flex: 1 }}>

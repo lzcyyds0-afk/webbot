@@ -71,7 +71,7 @@ class ActionExecutor:
                 output_json={"title": await page.title(), "url": page.url},
                 screenshot_path=None,
             )
-        except (PwTimeout, Exception) as exc:
+        except Exception as exc:
             elapsed = int((time.monotonic() - t0) * 1000)
             return StepResult(
                 step_index=ctx.step_index,
@@ -81,7 +81,7 @@ class ActionExecutor:
                 input_json={"url": url},
                 output_json=None,
                 screenshot_path=None,
-                error=str(exc),
+                error=_format_error(exc),
             )
 
     # ── click ──
@@ -102,7 +102,7 @@ class ActionExecutor:
                 output_json={"url": page.url, **_heal_output(ctx)},
                 screenshot_path=None,
             )
-        except (PwTimeout, Exception) as exc:
+        except Exception as exc:
             elapsed = int((time.monotonic() - t0) * 1000)
             return StepResult(
                 step_index=ctx.step_index,
@@ -112,7 +112,7 @@ class ActionExecutor:
                 input_json={"selector": selector},
                 output_json=_heal_output(ctx),
                 screenshot_path=None,
-                error=str(exc),
+                error=_format_error(exc),
             )
 
     # ── input ──
@@ -132,7 +132,7 @@ class ActionExecutor:
                 output_json={"url": page.url, **_heal_output(ctx)},
                 screenshot_path=None,
             )
-        except (PwTimeout, Exception) as exc:
+        except Exception as exc:
             elapsed = int((time.monotonic() - t0) * 1000)
             return StepResult(
                 step_index=ctx.step_index,
@@ -142,7 +142,7 @@ class ActionExecutor:
                 input_json={"selector": selector, "text": text},
                 output_json=_heal_output(ctx),
                 screenshot_path=None,
-                error=str(exc),
+                error=_format_error(exc),
             )
 
     # ── wait ──
@@ -167,7 +167,7 @@ class ActionExecutor:
                 output_json=_heal_output(ctx),
                 screenshot_path=None,
             )
-        except (PwTimeout, Exception) as exc:
+        except Exception as exc:
             elapsed = int((time.monotonic() - t0) * 1000)
             return StepResult(
                 step_index=ctx.step_index,
@@ -177,7 +177,7 @@ class ActionExecutor:
                 input_json={"ms": ms, "selector": selector},
                 output_json=_heal_output(ctx),
                 screenshot_path=None,
-                error=str(exc),
+                error=_format_error(exc),
             )
 
     # ── screenshot ──
@@ -207,7 +207,7 @@ class ActionExecutor:
                 input_json={"full_page": full_page},
                 output_json=None,
                 screenshot_path=None,
-                error=str(exc),
+                error=_format_error(exc),
             )
 
     # ── drag ──
@@ -220,6 +220,14 @@ class ActionExecutor:
 
 
 # ── Helpers ──
+
+def _format_error(exc: Exception) -> str:
+    """Human-readable error string; flags Playwright timeouts explicitly so
+    diagnosis and the UI can tell a timeout apart from other failures."""
+    if isinstance(exc, PwTimeout):
+        return f"Timeout: {exc}"
+    return str(exc)
+
 
 def _heal_output(ctx: StepContext) -> dict:
     """Return heal metadata dict for output_json."""
@@ -250,7 +258,7 @@ async def _is_locator_healthy(page: Page, selector: str) -> bool:
             return False
         # Check visibility of the first match
         return await page.locator(selector).first.is_visible(timeout=3_000)
-    except (PwTimeout, Exception):
+    except Exception:
         return False
 
 
